@@ -37,7 +37,6 @@ class User_m extends CI_Model{
         $params['Nama_lengkap'] = $post['fullname'];
         $params['Username'] = $post['username'];
         $params['Password'] = $post['password'];
-        $this->db->where('user_id', $post['user_id']);
         $this->db->update('daftar_user', $params);
     }
 
