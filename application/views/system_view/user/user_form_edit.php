@@ -68,6 +68,7 @@
                             <div class="col-md-12">
                             <label>Username *</label>
                                 <div class="form-group">
+                                    <input type="hidden" name="user_id" value="<?=$row->user_id?>">
                                     <input type="text" name="username" value="<?=$this->input->post('username') ?? $row->Username?>" class="form-control">
                                     <?=form_error('username')?>
                                 </div>
