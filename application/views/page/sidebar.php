@@ -34,13 +34,6 @@
                         <p>User</p>
                     </a>
                 </li>
-
-                <li>
-                    <a href="<?php echo site_url('buku/list_buku'); ?>">
-                        <i class="pe-7s-note2"></i>
-                        <p>LIST BUKU</p>
-                    </a>
-                </li>
                 <li>
                     <a href="<?php echo site_url('bukuu'); ?>">
                         <i class="pe-7s-note2"></i>
