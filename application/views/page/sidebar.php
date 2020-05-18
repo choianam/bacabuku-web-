@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('buku'); ?>">
+                    <a href="<?php echo site_url('bukuu'); ?>">
                         <i class="pe-7s-note2"></i>
                         <p>BUKU</p>
                     </a>

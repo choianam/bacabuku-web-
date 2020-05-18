@@ -30,15 +30,6 @@
     });
   } );
   
-    function hapus_confirm(){
-  var msg;
-  msg= "Data ingin dihapus, Anda yakin ? " ;
-  var agree=confirm(msg);
-  if (agree)
-  return true ;
-  else
-  return false ;
-}
 </script>
 
 
@@ -49,9 +40,9 @@
                             <?php if ( NULL !== $this->session->flashdata('message')){echo $this->session->flashdata('message');} ?>
                             <div class="card card-plain table-plain-bg">
                                 <div class="card-header ">
-                                    <h4 class="card-title">Data-Data User</h4>
+                                    <h4 class="card-title">Data-Data Buku</h4>
                                     <div class="pull-right">
-                                        <a href="<?=site_url('user/add')?>" clas="btn btn-primary btn-flat">
+                                        <a href="<?=site_url('bukuu/add')?>" clas="btn btn-primary btn-flat">
                                             <i class="fa fa-user-plus"></i>Create
                                         </a>
                                     </div>
@@ -61,10 +52,14 @@
                                     <table class="table table-bordered table-striped">
                                         <thead>
                                             <th>#</th>
-                                            <th>Akses</th>
-                                            <th>Nama_lengkap</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
+                                            <th>kode_buku</th>
+                                            <th>judul_buku</th>
+                                            <th>gambar_buku</th>
+                                            <th>file_buku</th>
+                                            <th>kategori_buku</th>
+                                            <th>pengarang_buku</th>
+                                            <th>penerbit_buku</th>
+                                            <th>jumlah_halaman</th>
                                             <th>Aksi</th>
                                         </thead>
 
@@ -73,17 +68,20 @@
                                             foreach($query->result() as $key => $data) { ?>
                                             <tr>
                                                 <td><?=$no++?></td>
-                                                <td><?=$data->id_akses == 1 ? "Admin" : "Siswa"?></td>
-                                                <td><?=$data->Nama_lengkap?></td>
-                                                <td><?=$data->Username?></td>
-                                                <td><?=$data->Password?></td>
+                                                <td><?=$data->kode_buku?></td>
+                                                <td><?=$data->judul_buku?></td>
+                                                <td>
+                                                <img src="<?=base_url('uploads/buku/'.$data->gambar_buku)?>" style="width:100px">
+                                                </td>
+                                                <td><?=$data->file_buku?></td>
+                                                <td><?=$data->kategori_buku?></td>
+                                                <td><?=$data->pengarang_buku?></td>
+                                                <td><?=$data->penerbit_buku?></td>
+                                                <td><?=$data->jumlah_halaman?></td>
                                                 <td class="text-center" width="160px">
-                                                <form action="<?=site_url('user/del')?>" method="post">
-                                                <a href="<?=site_url('user/edit/'.$data->user_id)?>" class="btn btn-primary btn-xs" >
-                                                        <i class="pe-7s-edit"></i> Update</a>
-                                                
-                                                    <input type="hidden" name="user_id" value="<?=$data->user_id?>">
-                                                    <button type="submit" class="btn btn-danger btn-xs" onclick="return hapus_confirm()">
+                                                <a href="<?=site_url('bukuu/edit/'.$data->id)?>" class="btn btn-primary btn-xs" >
+                                                        <i class="pe-7s-shield"></i> Edit</a>
+                                                <a href="<?=site_url('bukuu/del/'.$data->id)?>" onclick="return confirm('Yakin hapus data?')" class="btn btn-danger btn-xs" >
                                                         <i class="pe-7s-shield"></i> Delete</a>
                                                     </button>
                                                 </form>
