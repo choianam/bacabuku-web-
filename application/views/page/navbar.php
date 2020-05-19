@@ -23,7 +23,7 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">
+                            <a href="<?php echo base_url('auth/logout');?>">
                                 <p>Log out</p>
                             </a>
                         </li>
