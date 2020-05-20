@@ -21,12 +21,13 @@ class auth extends CI_Controller
 		if($cek != FALSE){
 			foreach ($cek as $row) {
 				$user = $row->Username;
-				$akses = $row->id_akses;
+				$password = $row->Password;
 			}
 			$this->session->set_userdata('session_user',$user);
-			$this->session->set_userdata('session_akses',$akses);
+			$this->session->set_userdata('session_password',$password);
 			redirect('user');
 		}else{
+			$this->session->set_flashdata('result_login', '<br>USername atau Password yang ada masukkan salah.');
 			$this->load->view('system_view/login/login');
 		}
 	}
