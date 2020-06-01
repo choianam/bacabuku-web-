@@ -62,7 +62,6 @@
                         
                             <div class="col-md-12">
                             <label>judul_buku *</label>
-                            <input type="hidden" name="id" value="<?=$row->id?>">
                             <input type="text" id="judul" name="judul_buku" value="<?=$row->judul_buku?>" class="form-control" required>
                                     <?=form_error('judul_buku')?>   
                             </div>

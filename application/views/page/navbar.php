@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li>
-                        <a><?php echo date('r'); ?></a>
+                        <a></a>
                         </li>
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -22,6 +22,7 @@
                     </ul>
                     
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        
         <a class="dropdown-item" href="#">
           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
           Profile
@@ -30,14 +31,14 @@
           Settings
         </a>
       </div>
-                   <!-- <ul class="nav navbar-nav navbar-right">
+                   <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="<?php echo base_url('auth/logout');?>">
                                 <p>Log out</p>
                             </a>
                         </li>
 						<li class="separator hidden-lg"></li>
-                    </ul> -->
+                    </ul>
                     
                 </div>
             </div>

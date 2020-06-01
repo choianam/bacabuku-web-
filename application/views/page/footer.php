@@ -4,32 +4,14 @@
                     <ul>
                         <li>
                             <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
+                                MaBook
                             </a>
                         </li>
                     </ul>
                 </nav>
-                <p class="copyright pull-right">
-                    <a href="http://www.creative-tim.com">Creative Tim</a>
-                </p>
                 
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> Joviandro, made with love for a better web
+                    &copy; <script>document.write(new Date().getFullYear())</script> MaBook Team
                 </p>
             </div>
         </footer>

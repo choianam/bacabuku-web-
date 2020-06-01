@@ -17,7 +17,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="<?php echo site_url('buku/list_buku'); ?>">
+                <a href="<?php echo site_url('dash'); ?>">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
@@ -38,12 +38,6 @@
                     <a href="<?php echo site_url('chart'); ?>">
                         <i class="pe-7s-graph3"></i>
                         <p>Chart</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="javascript:void(0)" onclick="document.body.requestFullscreen()">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>

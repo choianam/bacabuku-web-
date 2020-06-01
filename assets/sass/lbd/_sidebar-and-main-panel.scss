@@ -1,8 +1,8 @@
-.sidebar{
-    position: fixed;
+.sidebar,
+body > .navbar-collapse{
+    position: absolute;
     top: 0;
     bottom: 0;
-    right: auto;
     left: 0;
     width: 260px;
     display: block;
@@ -79,13 +79,6 @@
         margin-top: 20px;
         float: none;
 
-        .open > a,
-        li.dropdown .dropdown-menu li:hover > a,
-        li:hover > a{
-            background-color: rgba(255,255,255,0.13);
-            opacity: 1;
-        }
-
         li{
             > a{
                 color: #FFFFFF;
@@ -93,6 +86,11 @@
                 opacity: .86;
                 border-radius: 4px;
                 display: block;
+            }
+
+            &:hover > a{
+                background: rgba(255,255,255,0.13);
+                opacity: 1;
             }
 
             &.active > a{
@@ -227,10 +225,12 @@
 
 
 .main-panel{
+    background: rgba(203,203,210,.15);
     position: relative;
     z-index: 2;
     float: right;
     width: $sidebar-width;
+    min-height: 100%;
 
     > .content{
         padding: 30px 15px;
@@ -248,6 +248,7 @@
 
 .sidebar,
 .main-panel{
+    overflow: auto;
     max-height: 100%;
     height: 100%;
     -webkit-transition-property: top,bottom;
