@@ -20,15 +20,24 @@
                               
                         </li>
                     </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
+                    
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+          Profile
+          <a class="dropdown-item" href="#">
+          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+          Settings
+        </a>
+      </div>
+                   <!-- <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#">
                                 <p>Log out</p>
                             </a>
                         </li>
 						<li class="separator hidden-lg"></li>
-                    </ul>
+                    </ul> -->
                     
                 </div>
             </div>
