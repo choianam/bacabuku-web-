@@ -35,6 +35,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="<?php echo site_url('kategori'); ?>">
+                        <i class="pe-7s-note2"></i>
+                        <p>KATEGORI</p>
+                    </a>
+                </li>
+                <li>
                     <a href="<?php echo site_url('chart'); ?>">
                         <i class="pe-7s-graph3"></i>
                         <p>Chart</p>

@@ -17,8 +17,6 @@ class Bukuu extends CI_Controller{
     public function add() {
         $bukuu = new stdClass();
         $bukuu->judul_buku = null;
-        $bukuu->gambar_buku = null;
-        $bukuu->file_buku = null;
         $bukuu->kategori_buku = null;
         $bukuu->pengarang_buku = null;
         $bukuu->penerbit_buku = null;
