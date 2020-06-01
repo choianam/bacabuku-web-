@@ -23,12 +23,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url('auth'); ?>">
-                        <i class="pe-7s-user"></i>
-                        <p>Login</p>
-                    </a>
-                </li>
-                <li>
                     <a href="<?php echo site_url('user'); ?>">
                         <i class="pe-7s-user"></i>
                         <p>User</p>
