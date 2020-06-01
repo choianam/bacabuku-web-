@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo site_url(''); ?>">
+                    <a href="<?php echo site_url('auth'); ?>">
                         <i class="pe-7s-user"></i>
                         <p>Login</p>
                     </a>
@@ -34,15 +34,8 @@
                         <p>User</p>
                     </a>
                 </li>
-
                 <li>
-                    <a href="<?php echo site_url('buku/list_buku'); ?>">
-                        <i class="pe-7s-note2"></i>
-                        <p>LIST BUKU</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php echo site_url('buku'); ?>">
+                    <a href="<?php echo site_url('bukuu'); ?>">
                         <i class="pe-7s-note2"></i>
                         <p>BUKU</p>
                     </a>

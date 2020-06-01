@@ -10,7 +10,26 @@
 <?php $this->load->view('page/navbar'); ?>
 
 <script>
-    
+    $( function() {
+    $( "#datepicker" ).datepicker({
+        
+                  dateFormat : "dd-mm-yy",
+                  showAnim:""	,
+                  minDate: -0, 
+                  maxDate: "+1M",
+
+    });
+
+    $( "#datepicker2" ).datepicker({
+        
+                  dateFormat : "dd-mm-yy",
+                  showAnim:""	,
+                  minDate: -0, 
+                  maxDate: "+2W",
+
+    });
+  } );
+  
     function hapus_confirm(){
   var msg;
   msg= "Data ingin dihapus, Anda yakin ? " ;
