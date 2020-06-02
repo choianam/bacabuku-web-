@@ -9,7 +9,7 @@
   </head>
   <body id="login">
     <div class="container">
-      <form class="form-signin" action="<?php echo base_url('user'); ?>" method="post">
+      <form class="form-signin" action="<?php echo base_url('dash'); ?>" method="post">
         <h2 class="form-signin-heading">Silahkan Login</h2>
 		<?php
         	if (validation_errors() || $this->session->flashdata('result_login')) {

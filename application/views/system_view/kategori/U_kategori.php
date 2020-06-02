@@ -42,17 +42,6 @@
                                 <div class="card-body table-full-width table-responsive">
                         <div class="row">
                         <form action="" method="post">
-                            
-                        
-                        <div class="row">
-                            <div class="col-md-12">
-                            <label>id_kategori *</label>
-                                <div class="form-group">
-                                    <input type="text" name="id_kategori" value="<?=$this->input->post('id_kategori') ?? $row->id_kategori?>" class="form-control" >
-                                    <?=form_error('fullname')?>
-                                </div>
-                            </div>
-                        </div>       
                         <div class="row">
                             <div class="col-md-12">
                             <label>kategori *</label>

@@ -61,7 +61,6 @@
                                     <table class="table table-bordered table-striped">
                                         <thead>
                                             <th>#</th>
-                                            <th>id_kategori</th>
                                             <th>kategori</th>
                                             <th>Aksi</th>
                                         </thead>
@@ -71,7 +70,6 @@
                                             foreach($query->result() as $key => $data) { ?>
                                             <tr>
                                                 <td><?=$no++?></td>
-                                                <td><?=$data->id_kategori?></td>
                                                 <td><?=$data->kategori?></td>
                                                 <td class="text-center" width="160px">
                                                 <form action="<?=site_url('kategori/del')?>" method="post">

@@ -33,7 +33,7 @@
       </div>
                    <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="<?php echo base_url('auth/logout');?>">
+                            <a href="<?php echo base_url('auth/cek_log');?>">
                                 <p>Log out</p>
                             </a>
                         </li>

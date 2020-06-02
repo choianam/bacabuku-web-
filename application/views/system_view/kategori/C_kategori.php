@@ -42,16 +42,7 @@
                                 <div class="card-body table-full-width table-responsive">
                         <div class="row">
                         <form action="" method="post">
-                    //form untuk data kategori 
-                        <div class="row">
-                            <div class="col-md-12">
-                            <label>id_kategori *</label>
-                                <div class="form-group">
-                                    <input type="text" name="kategori" value="<?=set_value('kategori')?>" class="form-control">
-                                    <?=form_error('kategori')?>
-                                </div>
-                            </div>
-                        </div>         
+                
                         <div class="row">
                             <div class="col-md-12">
                             <label>Jenis Kategori *</label>

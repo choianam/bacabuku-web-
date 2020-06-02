@@ -79,8 +79,8 @@
                             <div class="col-md-12">
                             <label>file_buku *</label>
                                 <div class="form-group">
-                                    <input type="file" name="file_buku" value="<?=$row->file_buku?>" class="form-control">
-                                    <?=form_error('file_buku')?>
+                                    <input type="file" name="file_buku" class="form-control">
+                                    
                                 </div>
                             </div>
                         </div>  
@@ -88,8 +88,13 @@
                             <div class="col-md-12">
                             <label>kategori_buku *</label>
                                 <div class="form-group">
-                                    <input type="text" name="kategori_buku" value="<?=$row->kategori_buku?>" class="form-control">
-                                    <?=form_error('kategori_buku')?>
+                                    <select name="akses" class="form-control">
+                                        <option value="">- Pilih -</option>
+                                        <option value="1" <?=set_value('akses') == 1 ? "selected" : null?>>IPA</option>
+                                        <option value="2" <?=set_value('akses') == 2 ? "selected" : null?>>IPS</option>
+                                        <option value="3" <?=set_value('akses') == 3 ? "selected" : null?>>BAHASA INDONESIA</option>
+                                        <option value="4" <?=set_value('akses') == 4 ? "selected" : null?>>LAINNYA</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
