@@ -1,3 +1,4 @@
+
 <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
@@ -23,14 +24,16 @@
                     
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                         
-        <a class="dropdown-item" href="#">
-          <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-          Profile
-          <a class="dropdown-item" href="#">
-          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-          Settings
-        </a>
-      </div>
+                            <a class="dropdown-item" href="#">
+                            
+                            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Profile 
+                            
+                            <a class="dropdown-item" href="#">
+                            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Settings
+                            </a>
+                        </div>
                    <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="<?php echo base_url('auth/cek_log');?>">
@@ -40,6 +43,11 @@
 						<li class="separator hidden-lg"></li>
                     </ul>
                     
+                    <ul class="nav navbar-nav navbar-right">
+                    <?php if($this->session->userdata('session_user')) { ?>
+                    <i class="pe-7s-users" style="font-size:36px"><p>You <?=$this->session->userdata('session_user')?> </p></i>
+                    </ul>
+                    <?php } ?>
                 </div>
             </div>
         </nav>

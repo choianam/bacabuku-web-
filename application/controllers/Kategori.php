@@ -8,79 +8,49 @@ class Kategori extends CI_Controller{
         $this->load->library('form_validation');
     }
     public function index()
-    {
-        $data['query'] = $this->kategori_m->get();
+    {   
+        $data['title'] = 'Halaman Kategori';
+        $data['ktg'] = $this->kategori_m->getAllKategori();
         
         $this->load->view('system_view/kategori/R_kategori',$data);
     }
 
-    public function add()
+    public function tambah() 
     {
-        $this->load->library('form_validation');
-
-        $this->form_validation->set_rules('kategori', 'id_kategori', 'required');
-        $this->form_validation->set_rules('jenis kategori', 'kategori', 'required');
-        
-        $this->form_validation->set_message('required', '%s masih kosong, silahkan isi');
-        if ( $this->form_validation->run() == FALSE ){
-                $this->load->view('system_view/kategori/C_kategori');
+        $data['title'] = 'Tambah Mahasiswa';
+        $this->form_validation->set_rules('level', 'level', 'required');
+        $this->form_validation->set_rules('kategori', 'kategori', 'required');
+        if( $this->form_validation->run() == FALSE ){
+            $this->load->view('system_view/kategori/C_kategori');
         }else{
-            $post = $this->input->post(null, TRUE);
-            $this->kategori_m->add($post);
-            if($this->db->affected_rows() > 0){
-                echo "<script>alert('Data Berhasil Di Simpan');</script>";
-            }
-            echo "<script>window.location='".site_url('kategori')."';</script>";
+            $this->kategori_m->tambahKategori();
+            $this->session->set_flashdata('msg', 'Ditambahkan');
+            redirect('kategori');
         }
     }
 
-    public function edit($id)
-    {
 
-        $this->form_validation->set_rules('kategori', 'id_kategori', 'required');
-        $this->form_validation->set_rules('jenis kategori', 'kategori', 'required');
+    public function edit($id){
+
+
+        $data['title'] = 'Edit Data Mahasiswa';
+        $data['ktg'] = $this->kategori_m->getAllKategoriById($id);
+        $this->form_validation->set_rules('level', 'level', 'required');
+        $this->form_validation->set_rules('kategori', 'kategori', 'required');
         
-        $this->form_validation->set_message('required', '%s masih kosong, silahkan isi');
-        if ( $this->form_validation->run() == FALSE ){
-                $query = $this->kategori_m->get($id);
-                if($query->num_rows() > 0){
-                    $data['row'] = $query->row();
-                    $this->load->view('system_view/kategori/U_kategori',$data);
-                } else {
-                    echo "<script>alert('Data Berhasil Di Simpan');";
-                    echo "window.location='".site_url('kategori')."';</script>";
-                }
-                
-        }else{
-            $post = $this->input->post(null, TRUE);
-            $this->kategori_m->edit($post);
-            if($this->db->affected_rows() > 0){
-                echo "<script>alert('Data Berhasil Di Simpan');</script>";
-            }
-            echo "<script>window.location='".site_url('kategori')."';</script>";
+        if( $this->form_validation->run() == FALSE ){
+            $this->load->view('system_view/kategori/U_kategori', $data);
+        } else{
+            $this->kategori_m->editKategori();
+            $this->session->set_flashdata('msg', 'Diubah');
+            redirect('kategori');
         }
     }
-    function kategori_check() {
-        $post = $this->input->post(null, TRUE);
-        $query= $this->db->query("SELECT * FROM kategori WHERE kategori = '$post[kategori]' AND id_kategori != '$post[id_kategori]'");
-        if($query->num_rows() > 0) {
-            $this->form_validation->set_message('kategori_check', '{field} ini sudah ada bos');
-            return FALSE;
-        } else {
-            return TRUE;
-        }
+
+    public function hapus($id){
+
+        $this->kategori_m->hapusKategori($id);
+        $this->session->set_flashdata('msg', 'Dihapus');
+        redirect('kategori');
     }
-    public function del()
-    {
-        $id = $this->input->post('id_kategori');
-        $this->kategori_m->del($id);
-
-        if($this->db->affected_rows() > 0){
-            echo "<script>alert('Data Berhasil Di Hapus');</script>";
-        }
-        echo "<script>window.location='".site_url('kategori')."';</script>";
-    }
-
-    
-
 }

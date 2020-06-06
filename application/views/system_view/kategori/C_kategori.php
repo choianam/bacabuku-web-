@@ -23,50 +23,41 @@
 </script>
 
 
-<div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                    
-                            <?php if ( NULL !== $this->session->flashdata('message')){echo $this->session->flashdata('message');} ?>
-                            <div class="card card-plain table-plain-bg">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Add Kategori</h4>
-                                    <div class="pull-right">
-                                        <a href="<?=site_url('kategori')?>" clas="btn btn-warning btn-flat">
-                                            <i class="fa fa-undo"></i>Kembali
-                                        </a>
-                                    </div>
-                                    <p class="card-category"></p>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-                        <div class="row">
-                        <form action="" method="post">
-                
-                        <div class="row">
-                            <div class="col-md-12">
-                            <label>Jenis Kategori *</label>
-                                <div class="form-group">
-                                    <input type="text" name="jenis kategori" value="<?=set_value('jenis kategori')?>" class="form-control">
-                                    <?=form_error('jenis kategori')?>
-                                </div>
-                            </div>
-                        </div>  
-                        <div class="form-group">
-                            <button type="submit" onclick="return hapus_confirm()" class="btn btn-success btn-flat">Submit</button>
-                            
-                        </div>
-                        <div class="clearfix"></div>
-                        
-            </form>
 
-                                        </div>
-                                </div>
-                            </div>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Form Tambah Data Mahasiswa
+                </div>
+                <div class="card-body">
+                    <?php if( validation_errors() ) : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?= validation_errors(); ?>
                         </div>
-                    </div>
+                    <?php endif; ?>
+
+                    <form action="" method="post">
+                        <input type="hidden" name="id" id="id">                        
+                        <div class="form-group">
+                            <label for="level">Level</label>
+                            <input type="text" name="level" id="level" class="form-control" placeholder="Masukkan Level">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="kategori">Kategori</label>
+
+                            <input type="text" name="kategori" id="kategori" class="form-control" placeholder="Masukkan Nama Kategori">
+                        </div>
+                        <button type="submit" class="btn btn-primary float-right">Tambah Data</button>
+                        <a href="<?= base_url(); ?>/kategori" class="btn btn-primary float-right mr-2">Kembali</a>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
         <?php $this->load->view('page/footer'); ?>
 

@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Admin Login</title>
-    <!-- Bootstrap -->
-    <link href="<?php base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="<?php base_url() ?>assets/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="<?php base_url() ?>assets/css/login.css" rel="stylesheet" media="screen">
-  </head>
-  <body id="login">
-    <div class="container">
-      <form class="form-signin" action="<?php echo base_url('dash'); ?>" method="post">
-        <h2 class="form-signin-heading">Silahkan Login</h2>
-		<?php
-        	if (validation_errors() || $this->session->flashdata('result_login')) {
-        ?>
-        <div class="alert alert-error">
-        	<button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Warning!</strong>
-            <?php echo validation_errors(); ?>
-            <?php echo $this->session->flashdata('result_login'); ?>
-        </div>    
-        <?php } ?>
-        <input type="text" class="input-block-level" name="namauser" placeholder="Nama User">
-        <input type="password" class="input-block-level" name="password" placeholder="Password">
-        <button class="btn btn-primary" type="submit">Login</button>
-      </form>
-
-    </div> <!-- /container -->
-  </body>
+<html lang="en">
+	<head>
+		<title>Front-End Toko Online by Kursus-PHP.com</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<?php $this->load->view('system_view/layout/top_menu') ?>
+		
+		<div><?=validation_errors()?></div>
+		<div><?=$this->session->flashdata('error')?></div>
+		<?=form_open('dash', ['class'=>'form-horizontal'])?>
+		  <div class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+			<div class="col-sm-10">
+			  <input type="text" class="form-control" name="Username">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-10">
+			  <input type="password" class="form-control" name="Password">
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <div class="checkbox">
+				<label>
+				  <input type="checkbox"> Remember me
+				</label>
+			  </div>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+			  <button type="submit" class="btn btn-default">Sign in</button>
+			</div>
+		  </div>
+		</form>
+		
+	</body>
 </html>

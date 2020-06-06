@@ -42,57 +42,49 @@
 </script>
 
 
-<div class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php if ( NULL !== $this->session->flashdata('message')){echo $this->session->flashdata('message');} ?>
-                            <div class="card card-plain table-plain-bg">
-                                <div class="card-header ">
-                                    <h4 class="card-title">Data-Data Jenis Kategori</h4>
-                                    <div class="pull-right">
-                                        <a href="<?=site_url('kategori/add')?>" clas="btn btn-primary btn-flat">
-                                            <i class="fa fa-user-plus"></i>Create
-                                        </a>
-                                    </div>
-                                    <p class="card-category"></p>
-                                </div>
-                                <div class="card-body table-full-width table-responsive">
-                                    <table class="table table-bordered table-striped">
-                                        <thead>
-                                            <th>#</th>
-                                            <th>kategori</th>
-                                            <th>Aksi</th>
-                                        </thead>
+<div class="container">
+    <?php if( $this->session->flashdata('msg') ) : ?>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+          Data <strong>berhasil</strong> <?= $this->session->flashdata('msg'); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
 
-                                        <tbody>
-                                            <?php $no = 1;
-                                            foreach($query->result() as $key => $data) { ?>
-                                            <tr>
-                                                <td><?=$no++?></td>
-                                                <td><?=$data->kategori?></td>
-                                                <td class="text-center" width="160px">
-                                                <form action="<?=site_url('kategori/del')?>" method="post">
-                                                <a href="<?=site_url('kategori/edit/'.$data->id_kategori)?>" class="btn btn-primary btn-xs" >
-                                                        <i class="pe-7s-edit"></i> Update</a>
-                                                
-                                                    <input type="hidden" name="id_kategori" value="<?=$data->id_kategori?>">
-                                                    <button type="submit" class="btn btn-danger btn-xs" onclick="return hapus_confirm()">
-                                                        <i class="pe-7s-shield"></i> Delete</a>
-                                                    </button>
-                                                </form>
-                                                </td>
-                                            </tr>
-                                            <?php
-                                            } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+          <a href="<?= base_url(); ?>kategori/tambah" class="btn btn-primary"> Tambah Kategori</a>
+          <h1>Data Kategori</h1>
+          <table class="table table-stripped">
+            <thead>
+              <tr>
+                
+                <th scope="col">Kategori</th>
+                <th scope="col">Level</th>
+                <th scope="col" width="200px">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($ktg as $ktg) :?>
+                <tr>
+                  <td><?= $ktg['kategori'];?></td>
+                  <td><?= $ktg['level'];?></td>
+                  <td>
+                    <a href="<?= base_url(); ?>kategori/edit/<?= $ktg['id']; ?>" class="badge badge-primary badge-pill tampilModalUbah">Edit</a>
+                    <a href="<?= base_url(); ?>kategori/hapus/<?= $ktg['id']; ?>" class="badge badge-danger badge-pill" onclick="return confirm('Hapus data?');">Hapus</a>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>    
+        </div>
+    </div>
+</div>
 
         <?php $this->load->view('page/footer'); ?>
 

@@ -1,38 +1,39 @@
-<?php 
+<?php
 
-class Kategori_m extends CI_Model{
+class Kategori_m extends CI_model{
 
-    
-    public function get($id = null)
-    {
-        $this->db->from('kategori');
-        if($id != null) {
-            $this->db->where('id_kategori', $id);
-        }
-        $query = $this->db->get();
-        return $query;
+    public function getAllKategori(){
+        return $this->db->get('kategori')->result_array();
     }
 
-    public function add($post)
-    {
-        $params['id_kategori'] = $post['kategori'];
-        $params['kategori'] = $post['jenis kategori'];
-
-        $this->db->insert('kategori', $params);
+    public function getAllKategoriById($id){
+        $options=array('id'=>$id);
+        $query = $this->db->get_where('kategori',$options);
+        $ret = $query->row();
+        return $ret;
     }
 
-    public function edit($post)
-    {
-        $params['id_kategori'] = $post['kategori'];
-        $params['kategori'] = $post['jenis kategori'];
-        $this->db->where('id_kategori', $post['id_kategori']);
-        $this->db->update('kategori', $params);
+    public function tambahKategori(){
+        $ktgdata = [
+            'id' => $this->input->post('id', true),
+            'kategori' => $this->input->post('kategori'),
+            'level' => $this->input->post('level')
+        ];        
+        $this->db->insert('kategori', $ktgdata);
     }
 
+    public function editKategori(){
+        $ktgdata = [
+            'id' => $this->input->post('id', true),
+            'kategori' => $this->input->post('kategori'),
+            'level' => $this->input->post('level')
+        ];        
+        $this->db->where('id', $this->input->post('id', true));
+        $this->db->update('kategori', $ktgdata);
+    }
 
-    public function del($id)
-    {
-        $this->db->where('id_kategori', $id);
+    public function hapusKategori($id){
+        $this->db->where('id', $id);
         $this->db->delete('kategori');
     }
 

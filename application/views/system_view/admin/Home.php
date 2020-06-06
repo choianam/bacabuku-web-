@@ -1,3 +1,9 @@
+<head>
+    <title>MaBook</title>
+    
+    <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap core CSS -->
+    <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet"> <!-- Custom styles for this template -->
+</head>
 <?php $this->load->view('page/header'); ?>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jq-3.2.1/dt-1.10.16/r-2.2.1/datatables.min.css"/>
  
@@ -42,7 +48,7 @@
                                 <div class="card-header ">
                                     <h4 class="card-title">Data-Data Buku</h4>
                                     <div class="pull-right">
-                                        <a href="<?=site_url('bukuu/add')?>" clas="btn btn-primary btn-flat">
+                                        <a href="<?=site_url('upload/add')?>" clas="btn btn-primary btn-flat">
                                             <i class="fa fa-user-plus"></i>Create
                                         </a>
                                     </div>
@@ -50,38 +56,37 @@
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-bordered table-striped">
-                                        <thead>
-                                            <th>#</th>
-                                            <th>kode_buku</th>
-                                            <th>judul_buku</th>
-                                            <th>gambar_buku</th>
-                                            <th>file_buku</th>
-                                            <th>kategori_buku</th>
-                                            <th>pengarang_buku</th>
-                                            <th>penerbit_buku</th>
-                                            <th>jumlah_halaman</th>
-                                            <th>Aksi</th>
-                                        </thead>
-
-                                        <tbody>
-                                            <?php $no = 1;
-                                            foreach($query->result() as $key => $data) { ?>
+                                                <tr>
+                                                <th>#</th>
+                                                <th>Nama File</th>
+                                                <th>Gambar File</th>
+                                                <th>nama dokumen</th>
+                                                <th>File</th>
+                                                <th>Judul Buku</th>
+                                                <th>Level Kategori</th>
+                                                <th>Pengarang Buku</th>
+                                                <th>Penerbit Buku</th>
+                                                <th>Jumlah Halaman</th>
+                                                <th>Aksi</th>
+                                                </tr>
+                                                <?php $no = 1;
+                                            foreach($query as $key => $data) { ?>
                                             <tr>
                                                 <td><?=$no++?></td>
-                                                <td><?=$data->kode_buku?></td>
+                                                <td><?=$data->nama_file?></td>
+                                                <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
+                                                <td><?=$data->dokumen?></td>
+                                                <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
                                                 <td><?=$data->judul_buku?></td>
-                                                <td>
-                                                <img src="<?=base_url('uploads/buku/'.$data->gambar_buku)?>" style="width:100px">
-                                                </td>
-                                                <td><?=$data->file_buku?></td>
-                                                <td><?=$data->kategori_buku?></td>
+                                                <td><?=$data->level?></td>
                                                 <td><?=$data->pengarang_buku?></td>
                                                 <td><?=$data->penerbit_buku?></td>
                                                 <td><?=$data->jumlah_halaman?></td>
                                                 <td class="text-center" width="160px">
-                                                <a href="<?=site_url('bukuu/edit/'.$data->id)?>" class="btn btn-primary btn-xs" >
-                                                        <i class="pe-7s-shield"></i> Edit</a>
-                                                <a href="<?=site_url('bukuu/del/'.$data->id)?>" onclick="return confirm('Yakin hapus data?')" class="btn btn-danger btn-xs" >
+                                                <!--aksi-->
+                                                <a href="<?=site_url('upload/edit/'.$data->id)?>" class="btn btn-primary btn-xs">
+                                                        <i class="pe-7s-edit"></i> Update</a>
+                                                    <a href="<?=site_url()?>upload/deletedata/<?=$data->id?>/<?=$data->nama_file?>" class="btn btn-danger">
                                                         <i class="pe-7s-shield"></i> Delete</a>
                                                     </button>
                                                 </form>
@@ -89,16 +94,12 @@
                                             </tr>
                                             <?php
                                             } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </table>
 
-        <?php $this->load->view('page/footer'); ?>
+</div>
+</div>
+</div>
+<?php $this->load->view('page/footer'); ?>
 
 </body>
 
