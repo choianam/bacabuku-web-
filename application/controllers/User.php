@@ -13,10 +13,10 @@ class User extends CI_Controller{
     {
         $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('akses', 'id_akses', 'required');
         $this->form_validation->set_rules('fullname', 'Nama_lengkap', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('id_akses', 'id_akses', 'required');
         
         $this->form_validation->set_message('required', '%s masih kosong, silahkan isi');
         if ( $this->form_validation->run() == FALSE ){
@@ -34,10 +34,10 @@ class User extends CI_Controller{
     public function edit($id)
     {
 
-        $this->form_validation->set_rules('akses', 'id_akses', 'required');
         $this->form_validation->set_rules('fullname', 'Nama_lengkap', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('id_akses', 'id_akses', 'required');
         
         $this->form_validation->set_message('required', '%s masih kosong, silahkan isi');
         if ( $this->form_validation->run() == FALSE ){

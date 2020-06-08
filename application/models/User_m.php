@@ -23,20 +23,20 @@ class User_m extends CI_Model{
 
     public function add($post)
     {
-        $params['id_akses'] = $post['akses'];
         $params['Nama_lengkap'] = $post['fullname'];
         $params['Username'] = $post['username'];
         $params['Password'] = $post['password'];
+        $params['id_akses'] = $post['id_akses'];
 
         $this->db->insert('daftar_user', $params);
     }
 
     public function edit($post)
     {
-        $params['id_akses'] = $post['akses'];
         $params['Nama_lengkap'] = $post['fullname'];
         $params['Username'] = $post['username'];
         $params['Password'] = $post['password'];
+        $params['id_akses'] = $post['id_akses'];
         $this->db->where('user_id', $post['user_id']);
         $this->db->update('daftar_user', $params);
     }

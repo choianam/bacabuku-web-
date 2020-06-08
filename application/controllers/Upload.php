@@ -102,13 +102,13 @@ public function updatedata()
           if ( $this->upload->do_upload('filefoto') ) {
               $gambar = $this->upload->data();
               $data = array(
-                            'nama_file'       => $gambar['file_name'],
-                            'dokumen'       => $gambar['file_name'],
+                            'nama_file'        => $gambar['file_name'],
+                            'dokumen'          => $gambar['file_name'],
                             'judul_buku'       => $judul_buku,
-                            'level'       => $level,
-                            'pengarang_buku'       => $pengarang_buku,
-                            'penerbit_buku'       => $penerbit_buku,
-                            'jumlah_halaman'     => $jumlah_halaman,
+                            'level'            => $level,
+                            'pengarang_buku'   => $pengarang_buku,
+                            'penerbit_buku'    => $penerbit_buku,
+                            'jumlah_halaman'   => $jumlah_halaman,
                           );
             // hapus foto pada direktori
             @unlink($path.$this->input->post('filelama'));

@@ -16,10 +16,9 @@
       	  
       <ul class="nav navbar-nav navbar-right">
 		<li><?php echo anchor(base_url(), 'Home');?></li>
-        <
 		<?php if($this->session->userdata('Username')) { ?>
 			<li><div style="line-height:50px;">You Are : <?=$this->session->userdata('Username')?></div></li>
-			<li><?php echo anchor('logout', 'Logout');?></li>
+			<li><?php echo anchor('auth/logout', 'Logout');?></li>
 		<?php } else { ?>
 			<li><?php echo anchor('auth', 'Login');?></li>
 		<?php } ?>

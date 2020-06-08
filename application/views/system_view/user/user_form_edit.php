@@ -40,18 +40,17 @@
                                     <p class="card-category"></p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
-                        <div class="row">
+                                <div class="row">
                         <form action="" method="post">
                             <div class="col-md-12">
-                            <label>Akses *</label>
+                            <label>Role *</label>
                                 <div class="form-group">
-                                    <select name="akses" class="form-control">
-                                        <?php $akses = $this->input->post('akses') ? $this->input->post('akses') : $row->id_akses ?>
+                                    <select name="id_akses" class="form-control">
                                         <option value="">- Pilih -</option>
-                                        <option value="1"<?=$akses == 1 ? 'selected' : null ?>>Admin</option>
-                                        <option value="2" <?=$akses == 2 ? 'selected' : null ?>>Siswa</option>
+                                        <option value="1" <?='id_akses' == 1 ? "selected" : null?>>Admin</option>
+                                        <option value="2" <?='id_akses'== 2 ? "selected" : null?>>Siswa</option>
                                     </select>
-                                    <?=form_error('akses')?>
+                                    <?=form_error('role')?>
                                 </div>
                             </div>
                         </div>  

@@ -7,13 +7,21 @@ class Model_upldgbr extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-
     //fungsi untuk menampilkan semua data dari tabel database
  function get_allimage() {
         $this->db->from($this->tabel);
         $query = $this->db->get();
         return $query->result();
  }
+ public function all(){
+    //query semua record di table products
+    $query = $this->db->get('daftar_buku');
+    if($query->num_rows() > 0){
+        return $query->result();
+    } else {
+        return array();
+    }
+}
     function get($id)
     {
         $this->db->from('daftar_buku');
@@ -49,7 +57,17 @@ class Model_upldgbr extends CI_Model {
       $this->db->delete('daftar_buku');
       return TRUE;
   }
-
+  public function find($id){
+    //Query mencari record berdasarkan ID-nya
+    $query = $this->db->where('id', $id)
+                      ->limit(1)
+                      ->get('daftar_buku');
+    if($query->num_rows() > 0){
+        return $query->row();
+    } else {
+        return array();
+    }
+}
 
 }
 

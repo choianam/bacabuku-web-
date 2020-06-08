@@ -36,7 +36,7 @@
                         </div>
                    <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="<?php echo base_url('auth/cek_log');?>">
+                            <a href="<?php echo base_url('auth/logout');?>">
                                 <p>Log out</p>
                             </a>
                         </li>
@@ -44,8 +44,8 @@
                     </ul>
                     
                     <ul class="nav navbar-nav navbar-right">
-                    <?php if($this->session->userdata('session_user')) { ?>
-                    <i class="pe-7s-users" style="font-size:36px"><p>You <?=$this->session->userdata('session_user')?> </p></i>
+                    <?php if($this->session->userdata('Username')) { ?>
+                    <i class="pe-7s-users" style="font-size:36px"><p><?=$this->session->userdata('Username')?> </p></i>
                     </ul>
                     <?php } ?>
                 </div>

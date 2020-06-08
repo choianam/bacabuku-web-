@@ -40,20 +40,7 @@
                                     <p class="card-category"></p>
                                 </div>
                                 <div class="card-body table-full-width table-responsive">
-                        <div class="row">
-                        <form action="" method="post">
-                            <div class="col-md-12">
-                            <label>Akses *</label>
-                                <div class="form-group">
-                                    <select name="akses" class="form-control">
-                                        <option value="">- Pilih -</option>
-                                        <option value="1" <?=set_value('akses') == 1 ? "selected" : null?>>Admin</option>
-                                        <option value="2" <?=set_value('akses') == 2 ? "selected" : null?>>Siswa</option>
-                                    </select>
-                                    <?=form_error('akses')?>
-                                </div>
-                            </div>
-                        </div>  
+  
                         <div class="row">
                             <div class="col-md-12">
                             <label>Nama_lengkap *</label>
@@ -81,6 +68,20 @@
                                 </div>
                             </div>
                         </div>  
+                        <div class="row">
+                        <form action="" method="post">
+                            <div class="col-md-12">
+                            <label>Role *</label>
+                                <div class="form-group">
+                                    <select name="id_akses" class="form-control">
+                                        <option value="">- Pilih -</option>
+                                        <option value="admin" <?=set_value('id_akses') "selected" : null?>>Admin</option>
+                                        <option value="siswa" <?=set_value('id_akses') "selected" : null?>>Siswa</option>
+                                    </select>
+                                    <?=form_error('id_akses')?>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <button type="submit" onclick="return hapus_confirm()" class="btn btn-success btn-flat">Submit</button>
                             

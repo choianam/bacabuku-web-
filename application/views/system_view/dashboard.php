@@ -31,15 +31,15 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
 </head>
+
 <body>
     <!-- load sidebar in page/sidebar -->
     <?php $this->load->view('page/sidebar'); ?>
     <!-- Load navbar in page/navbar -->
     <?php $this->load->view('page/navbar'); ?>
+ 
+    
 <div class="wrapper">
-
-
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -49,6 +49,7 @@
                                 <h4 class="title">Data Buku</h4>
                                 <p class="category">*data buku selama 1 bulan</p>
                             </div>
+                            
                             <div class="content">
                                 <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
 
@@ -123,6 +124,7 @@
         </div>
 
 
+
         <?php $this->load->view('page/footer'); ?>
 
 </div>
@@ -158,12 +160,12 @@
         	demo.initChartist();
 
         	$.notify({
-            	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+            	icon: 'pe-7s-user',
+            	message: "Selamat datang <?php echo $this->session->userdata('Username') ?>, anda berhasil login sebagai admin<b>."
 
             },{
                 type: 'info',
-                timer: 4000
+                timer: 5000
             });
 
     	});

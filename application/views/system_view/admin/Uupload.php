@@ -1,6 +1,6 @@
 
 <head>
-    <title>Upload Gambar (Image), Rename dan Resize</title>
+    <title>MaBook</title>
     
     <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap core CSS -->
     <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet"> <!-- Custom styles for this template -->
@@ -48,7 +48,7 @@
           <td style="width:15%;">Level Kategori</td>
           <td>
             <div class="col-sm-10">
-            <input type="text" name="level" value="<?=$data->level?>" class="form-control" >
+            <input type="text" name="id_kategori" value="<?=$data->id_kategori?>" class="form-control" >
             </div>
             </td>
          </tr>

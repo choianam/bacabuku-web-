@@ -30,7 +30,7 @@
                 </li>
                 <li>
                     <a href="<?php echo site_url('upload'); ?>">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>BUKU</p>
                     </a>
                 </li>

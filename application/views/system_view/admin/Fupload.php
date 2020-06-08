@@ -51,7 +51,7 @@
           <td style="width:15%;">Level Kategori</td>
           <td>
             <div class="col-sm-10">
-                <textarea name="level" class="form-control"></textarea>
+                <textarea name="id_kategori" class="form-control"></textarea>
             </div>
             </td>
          </tr>

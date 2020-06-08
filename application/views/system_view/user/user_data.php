@@ -61,10 +61,10 @@
                                     <table class="table table-bordered table-striped">
                                         <thead>
                                             <th>#</th>
-                                            <th>Akses</th>
                                             <th>Nama_lengkap</th>
                                             <th>Username</th>
                                             <th>Password</th>
+                                            <th>Role</th>
                                             <th>Aksi</th>
                                         </thead>
 
@@ -73,10 +73,10 @@
                                             foreach($query->result() as $key => $data) { ?>
                                             <tr>
                                                 <td><?=$no++?></td>
-                                                <td><?=$data->id_akses == 1 ? "Admin" : "Siswa"?></td>
                                                 <td><?=$data->Nama_lengkap?></td>
                                                 <td><?=$data->Username?></td>
                                                 <td><?=$data->Password?></td>
+                                                <td><?=$data->id_akses?></td>
                                                 <td class="text-center" width="160px">
                                                 <form action="<?=site_url('user/del')?>" method="post">
                                                 <a href="<?=site_url('user/edit/'.$data->user_id)?>" class="btn btn-primary btn-xs" >
