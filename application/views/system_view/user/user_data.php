@@ -60,7 +60,7 @@
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-bordered table-striped">
                                         <thead>
-                                            <th>#</th>
+                                            <th>No</th>
                                             <th>Nama_lengkap</th>
                                             <th>Username</th>
                                             <th>Password</th>

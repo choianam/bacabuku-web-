@@ -57,7 +57,7 @@
                                 <div class="card-body table-full-width table-responsive">
                                     <table class="table table-bordered table-striped">
                                                 <tr>
-                                                <th>#</th>
+                                                <th>No</th>
                                                 <th>Nama File</th>
                                                 <th>Gambar File</th>
                                                 <th>nama dokumen</th>

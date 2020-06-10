@@ -7,7 +7,7 @@
 
 	<div class="row">
 		<div class="col m12">
-			<div class="card-panel teal darken-2 center white-text">
+			<div class="card-panel brown center white-text">
 				<p>
             			Sistem Kami menyediakan baca online yang dapat diakses dimana saja dan kapan saja sesuai dengan kebutuhan.
 				</p>
@@ -20,7 +20,7 @@
 				<div class="card-image waves-effect waves-block waves-light">
 					<img src="<?php echo base_url(); ?>assets2/img/2.jpg"> <!-- random image -->
 				</div>
-				<div class="card-content teal center">
+				<div class="card-content brown center white-text">
                     <p> Sistem Kami Adalah Baca Online</p>
 				</div>
 			</div>
@@ -31,8 +31,8 @@
 				<div class="card-image waves-effect waves-block waves-light">
 					<img src="<?php echo base_url(); ?>assets2/img/3.jpg"> <!-- random image -->
 				</div>
-				<div class="card-content teal center">
-                    <a class="btn" href="<?php echo base_url();?>Buku/profile">Tentang Perpustakaan</a>
+				<div class="card-content brown center">
+                    <a class="btn brown center" href="<?php echo base_url();?>Buku/profile">Tentang Perpustakaan</a>
 				</div>
 			</div>
 		</div>

@@ -35,7 +35,7 @@
     <!-- navbar -->
     <div class="navbar-fixed">
 
-            <nav class="teal darken-2">
+            <nav class="brown">
                 <div class="container">
                         <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <div class="nav-wrapper">
@@ -43,7 +43,7 @@
                             <ul class="right hide-on-med-and-down">
                                 
                                 <li><a href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>
-                                <li><a class="btn orange" href="<?php echo base_url();?>/auth">MASUK</a></li>
+                                <li><a class="btn brown" href="<?php echo base_url();?>/auth">MASUK</a></li>
                             </ul>
                         </div>
                 </div>
@@ -64,14 +64,14 @@
       <div class="container">
         <br><br>
         <div class="row center">
-          <img class=" responsive-img z-depth-5" width="100px" src="<?php echo base_url(); ?>assets2/img/l.jpg" alt="" srcset="">
+          
         </div>
-        <h3 class="header center white-text text-lighten-2 z-depth-5">PERPUSTAKAAN</h3>
-       
+        <h3 class="header center black-text" style="font-family: mojo">PERPUSTAKAAN</h3>
+       <h3 class="header center black-text" style="font-family: mojo">ONLINE</h3>
 
       </div>
     </div>
-    <div class="parallax"><img src="<?php echo base_url(); ?>assets2/img/1.jpg" alt=""></div>
+    <div class="parallax"><img src="<?php echo base_url(); ?>assets2/img/6.jpg" alt=""></div>
   </div>
   <!-- Slider end -->
 
@@ -87,7 +87,7 @@
                 </div>
           </div>
         </div>
-        <footer class="teal darken-2">
+        <footer class="brown">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
