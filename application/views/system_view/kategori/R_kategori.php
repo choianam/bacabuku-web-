@@ -57,9 +57,9 @@
     <?php endif; ?>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12" style="font-size: 15px">
           <a href="<?= base_url(); ?>kategori/tambah" class="btn btn-primary"> Tambah Kategori</a>
-          <h1>Data Kategori</h1>
+          <h1 style="font-size: 25px" >Data Kategori</h1>
           <table class="table table-stripped">
             <thead>
               <tr>
@@ -73,7 +73,7 @@
               <?php foreach ($ktg as $ktg) :?>
                 <tr>
                   <td><?= $ktg['kategori'];?></td>
-                  <td><?= $ktg['level'];?></td>
+                  <td><?= $ktg['id_kategori'];?></td>
                   <td>
                     <a href="<?= base_url(); ?>kategori/edit/<?= $ktg['id']; ?>" class="badge badge-primary badge-pill tampilModalUbah">Edit</a>
                     <a href="<?= base_url(); ?>kategori/hapus/<?= $ktg['id']; ?>" class="badge badge-danger badge-pill" onclick="return confirm('Hapus data?');">Hapus</a>
