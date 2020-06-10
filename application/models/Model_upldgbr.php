@@ -13,15 +13,25 @@ class Model_upldgbr extends CI_Model {
         $query = $this->db->get();
         return $query->result();
  }
- public function all(){
+    public function all(){
     //query semua record di table products
-    $query = $this->db->get('daftar_buku');
-    if($query->num_rows() > 0){
-        return $query->result();
+    $hasil = $this->db->get('daftar_buku');
+    if($hasil->num_rows() > 0){
+        return $hasil->result();
     } else {
         return array();
+        }
     }
-}
+    public function find($id){
+        //Query mencari record berdasarkan ID-nya
+        $hasil = $this->db->where('id', $id)
+                          ->get('daftar_buku');
+        if($hasil->num_rows() > 0){
+            return $hasil->row();
+        } else {
+            return array();
+        }
+    }
     function get($id)
     {
         $this->db->from('daftar_buku');
@@ -33,9 +43,35 @@ class Model_upldgbr extends CI_Model {
     }
     //fungsi insert ke database
     function get_insert($data){
-       $this->db->insert($this->tabel, $data);
+       $this->db->insert('order', $data);
        return TRUE;
     }
+    public function get_all(){
+        //query semua record di table products
+        $hasil = $this->db->get('order');
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        } else {
+            return array();
+            }
+    }
+
+    public function getfind($id){
+        //Query mencari record berdasarkan ID-nya
+        $hasil = $this->db->where('id', $id)
+                          ->get('order');
+        if($hasil->num_rows() > 0){
+            return $hasil->row();
+        } else {
+            return array();
+        }
+    }
+
+    public function get_del($id)
+	{
+        $this->db->delete('id', $id);
+        return $this->db->delete('order');
+	}
 
     public function get_by_id($kondisi)
     {
@@ -44,7 +80,10 @@ class Model_upldgbr extends CI_Model {
         $query = $this->db->get();
         return $query->row();
     }
-
+    function get_insert2($data){
+        $this->db->insert('daftar_buku', $data);
+        return TRUE;
+     }
     public function update2($data,$kondisi)
   {
       $this->db->update('daftar_buku',$data,$kondisi);
@@ -57,17 +96,7 @@ class Model_upldgbr extends CI_Model {
       $this->db->delete('daftar_buku');
       return TRUE;
   }
-  public function find($id){
-    //Query mencari record berdasarkan ID-nya
-    $query = $this->db->where('id', $id)
-                      ->limit(1)
-                      ->get('daftar_buku');
-    if($query->num_rows() > 0){
-        return $query->row();
-    } else {
-        return array();
-    }
-}
+  
 
 }
 

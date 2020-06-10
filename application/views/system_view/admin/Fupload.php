@@ -23,14 +23,7 @@
   <?=$this->session->flashdata('pesan')?>
      <form action="<?=base_url()?>upload/insert" method="post" enctype="multipart/form-data">
        <table class="table table-striped">
-       <tr>
-          <td style="width:15%;">File</td>
-          <td>
-            <div class="col-sm-6">
-                <input type="file" name="dokumen" class="form-control">
-            </div>
-            </td>
-         </tr>
+       
          <tr>
           <td style="width:15%;">File Foto</td>
           <td>
@@ -51,7 +44,7 @@
           <td style="width:15%;">Level Kategori</td>
           <td>
             <div class="col-sm-10">
-                <textarea name="id_kategori" class="form-control"></textarea>
+                <textarea name="kategori_buku" class="form-control"></textarea>
             </div>
             </td>
          </tr>

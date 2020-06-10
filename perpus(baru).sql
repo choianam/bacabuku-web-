@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2020 at 08:08 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Waktu pembuatan: 09 Jun 2020 pada 23.15
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `akses`
+-- Struktur dari tabel `akses`
 --
 
 CREATE TABLE `akses` (
@@ -34,7 +34,7 @@ CREATE TABLE `akses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `akses`
+-- Dumping data untuk tabel `akses`
 --
 
 INSERT INTO `akses` (`id_akses`, `keterangan`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `akses` (`id_akses`, `keterangan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daftar_buku`
+-- Struktur dari tabel `daftar_buku`
 --
 
 CREATE TABLE `daftar_buku` (
@@ -59,38 +59,31 @@ CREATE TABLE `daftar_buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `daftar_buku`
+-- Dumping data untuk tabel `daftar_buku`
 --
 
 INSERT INTO `daftar_buku` (`id`, `nama_file`, `dokumen`, `judul_buku`, `kategori_buku`, `pengarang_buku`, `penerbit_buku`, `jumlah_halaman`) VALUES
-(1, '', '', 'tereliye', 'IPA', 'tereliye', 'bintang masa', 1302),
-(2, '', '', 'Hujan', 'IPS', 'Tereliye', 'Tereliye', 1250),
-(4, 'file_1591272392.jpg', '', 'Tere', 'IPA', 'Ter', 'Ter', 2),
 (6, 'file_1591272639.jpg', '', 'Ayo', 'IPS', 'SI', 'SI', 1),
-(7, 'file_1591288705.png', '', 'j', 'j', 'j', 'j', 7),
-(8, 'file_1591288782.png', '', 'j', 'j', 'j', 'j', 7),
-(9, 'file_1591289035.png', '', 'j', 'j', 'j', 'j', 1),
-(10, 'file_1591289185.png', '', 'h', 'h', 'h', 'h', 2),
-(11, 'file_1591289375.png', '', 'j', 'j', 'k', 'jj', 2),
-(12, 'file_1591289644.png', '', 'h', 'h', 'h', 'h', 3),
-(13, 'file_1591290105.png', '', '78', 'iPA', 'IY', 'Y', 3);
+(13, 'file_1591290105.png', '', '78', 'iPA', 'IY', 'Y', 3),
+(20, 'file_1591469121.png', '', 'q', 'q', 'q', 'q', 0),
+(33, 'file_1591472738.jpg', 'file_1591472738.jpg', 'y', 'y', 'y', 'y', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daftar_user`
+-- Struktur dari tabel `daftar_user`
 --
 
 CREATE TABLE `daftar_user` (
   `user_id` int(10) NOT NULL,
-  `id_akses` varchar(10) NOT NULL COMMENT '1:admin, 2:siswa',
+  `id_akses` varchar(4) NOT NULL COMMENT '1:admin, 2:siswa',
   `Nama_lengkap` varchar(30) NOT NULL,
   `Username` varchar(30) NOT NULL,
   `Password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `daftar_user`
+-- Dumping data untuk tabel `daftar_user`
 --
 
 INSERT INTO `daftar_user` (`user_id`, `id_akses`, `Nama_lengkap`, `Username`, `Password`) VALUES
@@ -101,7 +94,7 @@ INSERT INTO `daftar_user` (`user_id`, `id_akses`, `Nama_lengkap`, `Username`, `P
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -110,7 +103,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
@@ -122,7 +115,7 @@ INSERT INTO `kategori` (`id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -132,7 +125,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -141,7 +134,30 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peminjam`
+-- Struktur dari tabel `order`
+--
+
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL,
+  `judul_buku` varchar(100) NOT NULL,
+  `kategori_buku` varchar(50) NOT NULL,
+  `pengarang_buku` varchar(100) NOT NULL,
+  `penerbit_buku` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `order`
+--
+
+INSERT INTO `order` (`id`, `judul_buku`, `kategori_buku`, `pengarang_buku`, `penerbit_buku`) VALUES
+(6, 'Ayo', 'IPS', 'SI', 'SI'),
+(13, '78', 'iPA', 'IY', 'Y'),
+(33, 'y', 'y', 'y', 'y');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `peminjam`
 --
 
 CREATE TABLE `peminjam` (
@@ -154,7 +170,7 @@ CREATE TABLE `peminjam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `peminjam`
+-- Dumping data untuk tabel `peminjam`
 --
 
 INSERT INTO `peminjam` (`nomor_kartu`, `dari_tanggal`, `sampai_tanggal`, `status_pengembalian`, `id`, `kode_buku`) VALUES
@@ -168,74 +184,97 @@ INSERT INTO `peminjam` (`nomor_kartu`, `dari_tanggal`, `sampai_tanggal`, `status
 --
 
 --
--- Indexes for table `akses`
+-- Indeks untuk tabel `akses`
 --
 ALTER TABLE `akses`
   ADD PRIMARY KEY (`id_akses`);
 
 --
--- Indexes for table `daftar_buku`
+-- Indeks untuk tabel `daftar_buku`
 --
 ALTER TABLE `daftar_buku`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `daftar_user`
+-- Indeks untuk tabel `daftar_user`
 --
 ALTER TABLE `daftar_user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `id_akses` (`id_akses`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `peminjam`
+-- Indeks untuk tabel `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `peminjam`
 --
 ALTER TABLE `peminjam`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `daftar_buku`
+-- AUTO_INCREMENT untuk tabel `daftar_buku`
 --
 ALTER TABLE `daftar_buku`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `daftar_user`
+-- AUTO_INCREMENT untuk tabel `daftar_user`
 --
 ALTER TABLE `daftar_user`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `peminjam`
+-- AUTO_INCREMENT untuk tabel `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT untuk tabel `peminjam`
 --
 ALTER TABLE `peminjam`
   MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `daftar_user`
+--
+ALTER TABLE `daftar_user`
+  ADD CONSTRAINT `daftar_user_ibfk_1` FOREIGN KEY (`id_akses`) REFERENCES `akses` (`id_akses`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

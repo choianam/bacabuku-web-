@@ -72,8 +72,9 @@
             <tbody>
               <?php foreach ($ktg as $ktg) :?>
                 <tr>
+                <td><?= $ktg['id'];?></td>
                   <td><?= $ktg['kategori'];?></td>
-                  <td><?= $ktg['level'];?></td>
+                  <td><?= $ktg['id_kategori'];?></td>
                   <td>
                     <a href="<?= base_url(); ?>kategori/edit/<?= $ktg['id']; ?>" class="badge badge-primary badge-pill tampilModalUbah">Edit</a>
                     <a href="<?= base_url(); ?>kategori/hapus/<?= $ktg['id']; ?>" class="badge badge-danger badge-pill" onclick="return confirm('Hapus data?');">Hapus</a>

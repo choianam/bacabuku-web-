@@ -48,7 +48,7 @@
           <td style="width:15%;">Level Kategori</td>
           <td>
             <div class="col-sm-10">
-            <input type="text" name="id_kategori" value="<?=$data->id_kategori?>" class="form-control" >
+            <input type="text" name="kategori_buku" value="<?=$data->kategori_buku?>" class="form-control" >
             </div>
             </td>
          </tr>
