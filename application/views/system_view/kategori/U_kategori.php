@@ -39,8 +39,8 @@
                     <form action="" method="post">
                         <input type="hidden" name="id" id="id" value="<?= $ktg->id; ?>">                        
                         <div class="form-group">
-                            <label for="level">Level</label>
-                            <input type="text" name="level" id="level" value="<?= $ktg->level; ?>" class="form-control" placeholder="Masukkan Level">
+                            <label for="id_kategori">Level</label>
+                            <input type="text" name="id_kategori" id="level" value="<?= $ktg->id_kategori; ?>" class="form-control" placeholder="Masukkan Level">
                         </div>
                         <div class="form-group">
                             <label for="kategori">Kategori</label>

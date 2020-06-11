@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2020 at 02:02 PM
+-- Generation Time: Jun 10, 2020 at 06:02 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -52,7 +52,7 @@ CREATE TABLE `daftar_buku` (
   `nama_file` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `dokumen` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `judul_buku` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_kategori` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '1:IPA, 2:IPS, 3:BAHASA, 4:BUKU UJIAN, 5:LAINNYA',
+  `kategori_buku` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '1:IPA, 2:IPS, 3:BAHASA, 4:BUKU UJIAN, 5:LAINNYA',
   `pengarang_buku` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `penerbit_buku` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jumlah_halaman` int(11) NOT NULL
@@ -62,7 +62,7 @@ CREATE TABLE `daftar_buku` (
 -- Dumping data for table `daftar_buku`
 --
 
-INSERT INTO `daftar_buku` (`id`, `nama_file`, `dokumen`, `judul_buku`, `id_kategori`, `pengarang_buku`, `penerbit_buku`, `jumlah_halaman`) VALUES
+INSERT INTO `daftar_buku` (`id`, `nama_file`, `dokumen`, `judul_buku`, `kategori_buku`, `pengarang_buku`, `penerbit_buku`, `jumlah_halaman`) VALUES
 (1, 'file_1591449933.png', 'file_1591449933.png', 'tereliye', 'IPA', 'tereliye', 'bintang masa', 130),
 (6, 'CRUD.png', '', 'Ayo', 'IPS', 'SI', 'SI', 1),
 (7, 'file_1591288705.png', '', 'j', 'j', 'j', 'j', 7),
@@ -73,7 +73,8 @@ INSERT INTO `daftar_buku` (`id`, `nama_file`, `dokumen`, `judul_buku`, `id_kateg
 (12, 'file_1591289644.png', '', 'h', 'h', 'h', 'h', 3),
 (13, 'file_1591290105.png', '', '78', 'iPA', 'IY', 'Y', 3),
 (14, 'file_1591449794.png', '', 'h', 'j', 'h', 'h', 1),
-(15, 'file_1591450350.png', '', 'AKu', 'AKu', 'AKu', 'AKu', 1);
+(15, 'file_1591450350.png', '', 'AKu', 'AKu', 'AKu', 'AKu', 1),
+(16, 'file_1591761337.png', '', 'RIA', 'IPS', 'RIA', 'RIA', 12);
 
 -- --------------------------------------------------------
 
@@ -97,19 +98,8 @@ INSERT INTO `daftar_user` (`user_id`, `Nama_lengkap`, `Username`, `Password`, `i
 (1, 'nizelia', 'seliak', '123', 1),
 (6, 'nizelia', 'seliakuloo', '12345', 1),
 (8, 'viqih zamzami', 'ih', '123', 2),
-(9, 'as', 'as', 'as', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `invoices`
---
-
-CREATE TABLE `invoices` (
-  `id` int(10) NOT NULL,
-  `date` datetime NOT NULL,
-  `status` enum('baca','canceled') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(9, 'as', 'as', 'as', 1),
+(10, 'as', 'a', '123', 1);
 
 -- --------------------------------------------------------
 
@@ -138,17 +128,24 @@ INSERT INTO `kategori` (`id`, `id_kategori`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `library`
+-- Table structure for table `order`
 --
 
-CREATE TABLE `library` (
-  `id` int(10) NOT NULL,
-  `invoices_id` int(10) NOT NULL,
-  `judul_buku` varchar(20) NOT NULL,
-  `id_kategori` varchar(20) NOT NULL,
-  `pengarang_buku` varchar(20) NOT NULL,
-  `penerbit` varchar(20) NOT NULL
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL,
+  `judul_buku` varchar(100) NOT NULL,
+  `kategori_buku` varchar(50) NOT NULL,
+  `pengarang_buku` varchar(100) NOT NULL,
+  `penerbit_buku` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `judul_buku`, `kategori_buku`, `pengarang_buku`, `penerbit_buku`) VALUES
+(7, 'j', 'j', 'j', 'j'),
+(16, 'RIA', 'IPS', 'RIA', 'RIA');
 
 --
 -- Indexes for dumped tables
@@ -174,21 +171,15 @@ ALTER TABLE `daftar_user`
   ADD KEY `id_akses` (`id_akses`);
 
 --
--- Indexes for table `invoices`
---
-ALTER TABLE `invoices`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `library`
+-- Indexes for table `order`
 --
-ALTER TABLE `library`
+ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -199,19 +190,13 @@ ALTER TABLE `library`
 -- AUTO_INCREMENT for table `daftar_buku`
 --
 ALTER TABLE `daftar_buku`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `daftar_user`
 --
 ALTER TABLE `daftar_user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `invoices`
---
-ALTER TABLE `invoices`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -220,10 +205,10 @@ ALTER TABLE `kategori`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `library`
+-- AUTO_INCREMENT for table `order`
 --
-ALTER TABLE `library`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

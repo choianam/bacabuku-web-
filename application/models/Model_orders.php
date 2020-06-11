@@ -1,27 +1,40 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Model_orders extends CI_Model {
+
+    
+    function simpanorder($info){
+        $this->db->insert("order",$info);
+    }
+
+    function tampilorder(){
+        return $this->db->get("order");
+    }
+    
+    function cekorder($id){
+        $this->db->where("id",$id);
+        return $this->db->get("daftar_buku");
+    }
+    
+    function jumlahorder(){
+        return $this->db->count_all("order");
+    }
+    
+    function hapusorder($id){
+        $this->db->where("id",$id);
+        $this->db->delete("order");
+    }
 	
 	public function process()
 	{
-		//create new invoice
-		$invoice = array(
-			'date'		=> date('Y-m-d H:i:s'),
-			'status'	=> 'baca'
-		);
-		$this->db->insert('invoices', $invoice);
-		$invoice_id = $this->db->insert_id();
-		
-		// put ordered items in orders table
 		foreach($this->cart->contents() as $item){
 			$data = array(
-				'invoice_id'		=> $invoice_id,
-				'product_id'		=> $item['id'],
-				'product_name'		=> $item['name'],
-				'qty'				=> $item['qty'],
-				'price'				=> $item['price']
+                'id'		=> $item['id'],
+				'judul_buku'		=> $item['judul_buku'],
+				'pengarang_buku'		=> $item['pengarang_buku'],
+				'penerbit_buku'				=> $item['penerbit_buku']
 			);
-			$this->db->insert('orders', $data);
+			$this->db->insert('order', $data);
 		}
 		
 		return TRUE;
@@ -30,7 +43,7 @@ class Model_orders extends CI_Model {
     public function all()
     {
         //Get all invoices from Invoices table
-        $hasil = $this->db->get('invoices');
+        $hasil = $this->db->get('order');
         if($hasil->num_rows() > 0){
             return $hasil->result();
         } else {
@@ -50,7 +63,7 @@ class Model_orders extends CI_Model {
 
     public function get_orders_by_invoice($invoice_id)
     {
-        $hasil = $this->db->where('invoice_id',$invoice_id)->get('orders');
+        $hasil = $this->db->where('invoice_id',$invoice_id)->get('library');
         if($hasil->num_rows() > 0){
             return $hasil->result();
         } else {

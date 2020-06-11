@@ -27,7 +27,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                        <form action="" method="post"> 
+                        <form action="" method="post">
                             <?php if ( NULL !== $this->session->flashdata('message')){echo $this->session->flashdata('message');} ?>
                             <div class="card card-plain table-plain-bg">
                                 <div class="card-header ">
@@ -69,7 +69,7 @@
                             </div>
                         </div>  
                         <div class="row">
-                        <form action="" method="post">
+                        
                             <div class="col-md-12">
                             <label>Role *</label>
                                 <div class="form-group">

@@ -18,7 +18,7 @@ class Kategori extends CI_Controller{
     public function tambah() 
     {
         $data['title'] = 'Tambah Mahasiswa';
-        $this->form_validation->set_rules('level', 'level', 'required');
+        $this->form_validation->set_rules('id_kategori', 'id_kategori', 'required');
         $this->form_validation->set_rules('kategori', 'kategori', 'required');
         if( $this->form_validation->run() == FALSE ){
             $this->load->view('system_view/kategori/C_kategori');
@@ -35,7 +35,7 @@ class Kategori extends CI_Controller{
 
         $data['title'] = 'Edit Data Mahasiswa';
         $data['ktg'] = $this->kategori_m->getAllKategoriById($id);
-        $this->form_validation->set_rules('level', 'level', 'required');
+        $this->form_validation->set_rules('id_kategori', 'id_kategori', 'required');
         $this->form_validation->set_rules('kategori', 'kategori', 'required');
         
         if( $this->form_validation->run() == FALSE ){

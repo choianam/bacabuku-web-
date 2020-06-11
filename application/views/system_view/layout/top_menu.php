@@ -15,7 +15,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       	  
       <ul class="nav navbar-nav navbar-right">
-		<li><?php echo anchor(base_url(), 'Home');?></li>
+		<li><?php echo anchor(base_url('welcome'), 'Home');?></li>
+    <li>
+			<?php
+				$text_cart_url  = '<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>';
+			
+			?>
+			<?=anchor('welcome/cart', $text_cart_url)?>
+		</li>
 		<?php if($this->session->userdata('Username')) { ?>
 			<li><div style="line-height:50px;">You Are : <?=$this->session->userdata('Username')?></div></li>
 			<li><?php echo anchor('auth/logout', 'Logout');?></li>

@@ -44,13 +44,13 @@ class Upload extends CI_Controller {
                 $data = array(
                   'nama_file' =>$gambar['file_name'],
                   'judul_buku' =>$this->input->post('judul_buku'),
-                  'level' =>$this->input->post('level'),
+                  'kategori_buku' =>$this->input->post('kategori_buku'),
                   'pengarang_buku' =>$this->input->post('pengarang_buku'),
                   'penerbit_buku' =>$this->input->post('penerbit_buku'),
                   'jumlah_halaman' =>$this->input->post('jumlah_halaman')
                 );
 
-                $this->model_upldgbr->get_insert($data); //akses model untuk menyimpan ke database
+                $this->model_upldgbr->get_insert2($data); //akses model untuk menyimpan ke database
                 
                 //pesan yang muncul jika berhasil diupload pada session flashdata
                 $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Upload gambar berhasil !!</div></div>");
@@ -78,7 +78,7 @@ public function updatedata()
 {
     $id   = $this->input->post('id');
     $judul_buku = $this->input->post('judul_buku');
-    $level = $this->input->post('level');
+    $kategori_buku = $this->input->post('kategori_buku');
     $pengarang_buku = $this->input->post('pengarang_buku');
     $penerbit_buku = $this->input->post('penerbit_buku');
     $jumlah_halaman = $this->input->post('jumlah_halaman');
@@ -105,7 +105,7 @@ public function updatedata()
                             'nama_file'        => $gambar['file_name'],
                             'dokumen'          => $gambar['file_name'],
                             'judul_buku'       => $judul_buku,
-                            'level'            => $level,
+                            'kategori_buku'            => $kategori_buku,
                             'pengarang_buku'   => $pengarang_buku,
                             'penerbit_buku'    => $penerbit_buku,
                             'jumlah_halaman'   => $jumlah_halaman,

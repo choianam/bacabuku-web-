@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="<?php echo base_url('assets/img/sidebar-5.jpg'); ?>">
+    <div class="sidebar" data-color="purpel" data-image="<?php echo base_url('assets/img/sidebar-6.jpg'); ?>">
 
     <!--
 

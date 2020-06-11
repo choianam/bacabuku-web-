@@ -78,7 +78,7 @@
                                                 <td><?=$data->dokumen?></td>
                                                 <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
                                                 <td><?=$data->judul_buku?></td>
-                                                <td><?=$data->id_kategori?></td>
+                                                <td><?=$data->kategori_buku?></td>
                                                 <td><?=$data->pengarang_buku?></td>
                                                 <td><?=$data->penerbit_buku?></td>
                                                 <td><?=$data->jumlah_halaman?></td>

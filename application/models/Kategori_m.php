@@ -17,7 +17,7 @@ class Kategori_m extends CI_model{
         $ktgdata = [
             'id' => $this->input->post('id', true),
             'kategori' => $this->input->post('kategori'),
-            'level' => $this->input->post('level')
+            'id_kategori' => $this->input->post('id_kategori')
         ];        
         $this->db->insert('kategori', $ktgdata);
     }
@@ -26,7 +26,7 @@ class Kategori_m extends CI_model{
         $ktgdata = [
             'id' => $this->input->post('id', true),
             'kategori' => $this->input->post('kategori'),
-            'level' => $this->input->post('level')
+            'id_kategori' => $this->input->post('id_kategori')
         ];        
         $this->db->where('id', $this->input->post('id', true));
         $this->db->update('kategori', $ktgdata);
