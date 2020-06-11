@@ -21,6 +21,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets2/img/logo.png'); ?>">
     <title>MaBook</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
@@ -55,6 +58,12 @@
       <div class="thumbnail">
             <img src="<?=base_url()?>uploads/<?=$product->nama_file;?>" style="max-width: 100%; max-height:100%; height:100px">
         <div class="caption">
+        <div class="w3-display-topleft w3-black w3-padding">Ayo Baca </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+        </div>
+        </div>
+        <center>
         <h3 style="min-height:60px;"><?=$product->judul_buku?></h3>
         <p><?=$product->kategori_buku?></p>
         <p><?=$product->pengarang_buku?></p>
@@ -65,6 +74,7 @@
             'role'  => 'button'
           ])?>
         </p>
+        </center>
         </div>
       </div>
       </div>

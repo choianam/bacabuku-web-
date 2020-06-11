@@ -38,7 +38,7 @@
 
             <nav class="brown">
                 <div class="container">
-                        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
                         <div class="nav-wrapper">
                             <a href="<?php echo base_url();?>Buku" class="brand-logo"><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 70px; width: 70px; border-radius: 50%;" alt=""></a>
                             <ul class="right hide-on-med-and-down">
@@ -52,12 +52,7 @@
           </div>
     <!-- mavbar-end -->
 
-    <!-- SideNav -->
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="<?php echo base_url();?>Buku/list_buku">Tentang</a></li>
-        <li><a href="<?php echo base_url();?>Buku/profile">Pendidikan</a></li>
-        <li><a class="btn orange" href="portofolio.php">MASUK</a></li>
-    </ul>
+    
     <!-- SideNav-end -->
     <!-- Slider -->
     <div id="index-banner" class="parallax-container">
