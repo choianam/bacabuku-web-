@@ -33,6 +33,7 @@
                         <!--aksi-->
                         <a href="<?=site_url()?>welcome/delete" class="btn btn-danger">
                         <i class="pe-7s-shield"></i> Delete</a>
+                         
                         </button>
                         </form>
                     </td>

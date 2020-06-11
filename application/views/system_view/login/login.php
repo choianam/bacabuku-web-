@@ -4,10 +4,11 @@
     <title>Login Perpustakaan</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style>
-        
+ 
 body{
 	font-family: sans-serif;
-	background: #d5f0f3;
+	background-image: url('<?php echo base_url(); ?>assets2/img/bg.jpg');
+        background-size: cover;
 }
 
 h1{
@@ -24,7 +25,7 @@ h1{
 
 .kotak_login{
 	width: 350px;
-	background: white;
+	background: #F4F6F6 ;
 	/*meletakkan form ke tengah*/
 	margin: 80px auto;
 	padding: 30px 20px;
@@ -62,9 +63,9 @@ label{
 </head>
   <body>
 
-	<h1>Selamat Datang di Perpustakaan Online <br/></h1>
+	<h1 style="font-family: CocogooseNarrows">Selamat Datang di Perpustakaan Online <br/></h1>
 
-	<div class="kotak_login">
+	<div class="kotak_login" style="font-family: streetslab">
 		<p class="tulisan_login">Silahkan login</p>
             <center>
                 <img  src="<?php echo base_url(); ?>/assets2/img/logo.png" class="profile-img" alt="logo images" style="height: 90px; width: 90px; border-radius: 50%;	">    

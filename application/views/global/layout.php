@@ -39,7 +39,7 @@
                 <div class="container">
                         <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <div class="nav-wrapper">
-                            <a href="<?php echo base_url();?>Buku" class="brand-logo"><img src="<?php echo base_url(); ?>assets2/img/ll.png" width="45px" alt=""></a>
+                            <a href="<?php echo base_url();?>Buku" class="brand-logo"><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 70px; width: 70px; border-radius: 50%;" alt=""></a>
                             <ul class="right hide-on-med-and-down">
                                 
                                 <li><a href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>

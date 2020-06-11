@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	  <?=anchor(base_url(), 'Toko Online', ['class'=>'navbar-brand'])?>
+	  <?=anchor(base_url(), 'Perpustakaan Online', ['class'=>'navbar-brand'])?>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
