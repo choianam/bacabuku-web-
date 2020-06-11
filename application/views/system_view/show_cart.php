@@ -33,6 +33,8 @@
                         <!--aksi-->
 						<a href="<?=site_url('welcome/delete/'.$items->id) ?>" class="btn btn-danger">
                         <i class="pe-7s-shield"></i> Delete</a>
+						<a href="<?=site_url('welcome/baca/'.$items->id) ?>" class="btn btn-danger">
+                        <i class="pe-7s-shield"></i> Baca</a>
                          
                         </button>
                         </form>

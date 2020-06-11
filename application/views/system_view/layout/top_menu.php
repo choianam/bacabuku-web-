@@ -1,4 +1,7 @@
 <nav class="navbar navbar-default">
+
+
+
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -18,10 +21,9 @@
 		<li><?php echo anchor(base_url('welcome'), 'Home');?></li>
     <li>
 			<?php
-				$text_cart_url  = '<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>';
-			
+				$text_cart_url  = '<span class="glyphicon glyphicon-book" aria-hidden="true"></span>';
 			?>
-			<?=anchor('welcome/cart', $text_cart_url)?>
+			<?=anchor('welcome/cart','Library' ,$text_cart_url)?>
 		</li>
 		<?php if($this->session->userdata('Username')) { ?>
 			<li><div style="line-height:50px;">You Are : <?=$this->session->userdata('Username')?></div></li>
@@ -33,4 +35,7 @@
 	  
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
+  
+
+
 </nav>

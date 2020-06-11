@@ -24,6 +24,26 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
+  <!--Modal-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">PERPUSTAKAAN ONLINE</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> SELAMAT DATANG "<?php echo $this->session->userdata('Username') ?>", ANDA BERHASIL LOGIN SEBAGAI SISWA<b></p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
     <?php $this->load->view('system_view/layout/top_menu') ?>
     
     <!-- Tampilkan semua produk -->
@@ -52,4 +72,7 @@
     </div>
     
   </body>
+  <script>
+  $('#myModal').modal('show');
+  </script>
 </html>
