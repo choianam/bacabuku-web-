@@ -23,7 +23,8 @@
   <div class="panel-body">
   <?=$this->session->flashdata('pesan')?>
        <table class="table table-striped">
-       <tr>
+       
+         <tr>
           <td style="width:15%;">File Foto</td>
           <td>
             <div class="col-sm-10">
@@ -31,6 +32,19 @@
 
           <!-- file lama -->
           <input type="hidden" name="filelama" value="<?=$data->nama_file?>" required>
+            <!-- ID -->
+          <input type="hidden" name="id" value="<?=$data->id?>" required>
+            </div>
+            </td>
+         </tr>
+         <tr>
+          <td style="width:15%;">File Dokumen</td>
+          <td>
+            <div class="col-sm-10">
+            <input type="file" name="filedokumen"><br><br>
+
+          <!-- file lama -->
+          <input type="hidden" name="filelama" value="<?=$data->dokumen?>" required>
             <!-- ID -->
           <input type="hidden" name="id" value="<?=$data->id?>" required>
             </div>

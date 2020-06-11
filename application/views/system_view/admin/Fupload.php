@@ -32,6 +32,14 @@
             </div>
             </td>
          </tr>
+         <tr>
+          <td style="width:15%;">File Dokumen</td>
+          <td>
+            <div class="col-sm-6">
+                <input type="file" name="filedokumen" class="form-control">
+            </div>
+            </td>
+         </tr>
         <tr>
           <td style="width:15%;">Judul</td>
           <td>
