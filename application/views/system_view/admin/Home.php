@@ -60,8 +60,7 @@
                                                 <th>No</th>
                                                 <th>Nama File</th>
                                                 <th>Gambar File</th>
-                                                <th>nama dokumen</th>
-                                                <th>File</th>
+                                                <th>Nama Dokumen</th>
                                                 <th>Judul Buku</th>
                                                 <th>ID Kategori</th>
                                                 <th>Pengarang Buku</th>
@@ -76,7 +75,6 @@
                                                 <td><?=$data->nama_file?></td>
                                                 <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
                                                 <td><?=$data->dokumen?></td>
-                                                <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
                                                 <td><?=$data->judul_buku?></td>
                                                 <td><?=$data->kategori_buku?></td>
                                                 <td><?=$data->pengarang_buku?></td>

@@ -43,6 +43,7 @@ class Upload extends CI_Controller {
                 $gambar = $this->upload->data();
                 $data = array(
                   'nama_file' =>$gambar['file_name'],
+                  'dokumen' =>$gambar['file_name'],
                   'judul_buku' =>$this->input->post('judul_buku'),
                   'kategori_buku' =>$this->input->post('kategori_buku'),
                   'pengarang_buku' =>$this->input->post('pengarang_buku'),
@@ -90,7 +91,7 @@ public function updatedata()
     // get foto
     $nama_file = "file_".time();
     $config['upload_path'] = './uploads ';
-    $config['allowed_types'] = 'jpg|png|jpeg|gif|pdf';
+    $config['allowed_types'] = 'pdf|jpg|png|jpeg|gif';
     $config['max_size'] = '2048';  //2MB max
     $config['max_width'] = '4480'; // pixel
     $config['max_height'] = '4480'; // pixel
@@ -105,7 +106,7 @@ public function updatedata()
                             'nama_file'        => $gambar['file_name'],
                             'dokumen'          => $gambar['file_name'],
                             'judul_buku'       => $judul_buku,
-                            'kategori_buku'            => $kategori_buku,
+                            'kategori_buku'    => $kategori_buku,
                             'pengarang_buku'   => $pengarang_buku,
                             'penerbit_buku'    => $penerbit_buku,
                             'jumlah_halaman'   => $jumlah_halaman,

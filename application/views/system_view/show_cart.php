@@ -31,7 +31,7 @@
 					<td><?= $items->penerbit_buku?></td>
 					<td class="text-center" width="160px">
                         <!--aksi-->
-                        <a href="<?=site_url()?>welcome/delete" class="btn btn-danger">
+						<a href="<?=site_url('welcome/delete/'.$items->id) ?>" class="btn btn-danger">
                         <i class="pe-7s-shield"></i> Delete</a>
                          
                         </button>
@@ -39,7 +39,7 @@
                     </td>
 				</tr>
 				<?php
-                                            } ?>
+            } ?>
 			</tbody>
 		</table>
 	</body>
