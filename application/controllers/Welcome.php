@@ -39,6 +39,7 @@ class Welcome extends CI_Controller {
 
 		$this->model_upldgbr->get_insert($data);
 		redirect(base_url('welcome/cart'));
+            
 	}
 	
 	public function cart(){
@@ -47,6 +48,7 @@ class Welcome extends CI_Controller {
 		$data['order'] = $this->model_upldgbr->get_all(); //query dari model
 		$this->load->view('system_view/show_cart', $data);
 	}
+	
 	
 	public function delete($id)
 	{

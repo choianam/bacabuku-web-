@@ -19,13 +19,11 @@ function hapus_confirm(){
 	</head>
 	<body>
 		<?php $this->load->view('system_view/layout/top_menu') ?>
-		<?php echo $this->session->flashdata('message');?>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr>
 					<th>No</th>
 					<th>Judul</th>
-					<th>Kategori</th>
 					<th>Pengarang</th>
 					<th>Penerbit</th>
 					<th>Aksi</th>
@@ -37,14 +35,13 @@ function hapus_confirm(){
 				<tr>
 					<td><?= $no++ ?></td>
 					<td><?= $items->judul_buku?></td>
-					<td><?= $items->kategori_buku?></td>
 					<td><?= $items->pengarang_buku?></td>
 					<td><?= $items->penerbit_buku?></td>
 					<td class="text-center" width="160px">
                         <!--aksi-->
 						<a href="<?=site_url('welcome/delete/'.$items->id) ?>" class="btn btn-danger" onclick="return hapus_confirm()">
                         <i class="pe-7s-shield"></i> Delete</a>
-						<a href="<?=site_url('welcome/baca/'.$items->id) ?>" class="btn btn-danger" >
+						<a href="<?=site_url('baca/') ?>" class="btn btn-danger" >
                         <i class="pe-7s-shield"></i> Baca</a>
                          
                         </button>

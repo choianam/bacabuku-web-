@@ -62,7 +62,7 @@
                                                 <th>Gambar File</th>
                                                 <th>Nama Dokumen</th>
                                                 <th>Judul Buku</th>
-                                                <th>ID Kategori</th>
+                                                <th>Kategori</th>
                                                 <th>Pengarang Buku</th>
                                                 <th>Penerbit Buku</th>
                                                 <th>Jumlah Halaman</th>
