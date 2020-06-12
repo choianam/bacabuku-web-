@@ -11,7 +11,7 @@
 
 <script>
     
-    function hapus_confirm(){
+    function update_confirm(){
   var msg;
   msg= "Anda yakin data sudah benar ?? " ;
   var agree=confirm(msg);
@@ -47,7 +47,7 @@
                             <input type="text" name="kategori" id="kategori" value="<?= $ktg->kategori; ?>" class="form-control" placeholder="Masukkan Nama Kategori">
 
                         </div>
-                        <button type="submit" class="btn btn-primary float-right">Ubah Data</button>
+                        <button type="submit" onclick="return insert_confirm()" class="btn btn-primary float-right">Update</button>
                         <a href="<?= base_url(); ?>/kategori" class="btn btn-primary float-right mr-2">Kembali</a>
                     </form>
                 </div>

@@ -1,3 +1,15 @@
+<script>
+    
+    function insert_confirm(){
+  var msg;
+  msg= "Anda yakin data sudah benar ?? " ;
+  var agree=confirm(msg);
+  if (agree)
+  return true ;
+  else
+  return false ;
+}
+</script>
 <head>
     <title>MaBook</title>
     
@@ -18,7 +30,7 @@
 <div class="container-fluid">
       <!-- Main component for a primary marketing message or call to action -->
 <div class="panel panel-default">
-  <div class="panel-heading"><b>Form Upload Image</b></div>
+  <div class="panel-heading"><b>Form Upload</b></div>
   <div class="panel-body">
   <?=$this->session->flashdata('pesan')?>
      <form action="<?=base_url()?>upload/insert" method="post" enctype="multipart/form-data">
@@ -82,7 +94,7 @@
          </tr>
          <tr>
           <td colspan="2">
-            <input type="submit" class="btn btn-success" value="Simpan">
+            <input type="submit" onclick="return insert_confirm()" class="btn btn-success" value="Simpan">
             <button type="reset" class="btn btn-default">Batal</button>
           </td>
          </tr>

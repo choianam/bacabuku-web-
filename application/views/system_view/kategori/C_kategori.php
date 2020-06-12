@@ -11,7 +11,7 @@
 
 <script>
     
-    function hapus_confirm(){
+    function insert_confirm(){
   var msg;
   msg= "Anda yakin data sudah benar ?? " ;
   var agree=confirm(msg);
@@ -39,6 +39,7 @@
                     <?php endif; ?>
 
                     <form action="" method="post">
+                            <?php if ( NULL !== $this->session->flashdata('message')){echo $this->session->flashdata('message');} ?>
                         <input type="hidden" name="id" id="id">                        
                         <div class="form-group">
                             <label for="id_kategori">Level</label>
@@ -50,8 +51,8 @@
 
                             <input type="text" name="kategori" id="kategori" class="form-control" placeholder="Masukkan Nama Kategori">
                         </div>
-                        <button type="submit" class="btn btn-primary float-right">Tambah Data</button>
-                        <a href="<?= base_url(); ?>/kategori" class="btn btn-primary float-right mr-2">Kembali</a>
+                        <button type="submit" onclick="return insert_confirm()" class="btn btn-primary float-right">Submit</button>
+                        <a href="<?= base_url(); ?>/kategori" class="btn btn-primary float-right mr-2">Back</a>
                     </form>
                 </div>
             </div>

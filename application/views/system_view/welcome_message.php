@@ -14,6 +14,16 @@
             $("#myModal2").modal("hide");
         })
       })
+      function tambah_confirm()
+  {
+    var msg;
+    msg= "Anda yakin, buku ini masuk library anda ?? " ;
+    var agree=confirm(msg);
+    if (agree)
+    return true ;
+    else
+    return false ;
+  }
 </script>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,10 +79,8 @@
         <p><?=$product->pengarang_buku?></p>
         <p><?=$product->penerbit_buku?></p>
         <p>
-          <?=anchor('welcome/add_to_cart/' . $product->id, 'Tambah' , [
-            'class'  => 'btn btn-primary',
-            'role'  => 'button'
-          ])?>
+        <a href="<?=site_url('welcome/add_to_cart/'.$product->id) ?>" class="btn btn-primary" onclick="return tambah_confirm()">
+                        <i class="pe-7s-shield"></i> Tambah</a>
         </p>
         </center>
         </div>
@@ -83,6 +91,8 @@
     </div>
     
   </body>
+  
+  <!--script untuk otomatis menampilkan modal-->
   <script>
   $('#myModal').modal('show');
   </script>
