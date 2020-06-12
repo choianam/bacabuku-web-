@@ -14,22 +14,6 @@ class Kategori extends CI_Controller{
         
         $this->load->view('system_view/kategori/R_kategori',$data);
     }
-
-    public function tambah() 
-    {
-        $data['title'] = 'Tambah Mahasiswa';
-        $this->form_validation->set_rules('id_kategori', 'id_kategori', 'required');
-        $this->form_validation->set_rules('kategori', 'kategori', 'required');
-        if( $this->form_validation->run() == FALSE ){
-            $this->load->view('system_view/kategori/C_kategori');
-        }else{
-            $this->kategori_m->tambahKategori();
-            $this->session->set_flashdata('msg', 'Ditambahkan');
-            redirect('kategori');
-        }
-    }
-
-
     public function edit($id){
 
 
