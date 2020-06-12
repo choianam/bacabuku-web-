@@ -25,7 +25,7 @@ h1{
 
 .kotak_login{
 	width: 350px;
-	background: #F4F6F6 ;
+	background:    #C0C0C0;
 	/*meletakkan form ke tengah*/
 	margin: 80px auto;
 	padding: 30px 20px;

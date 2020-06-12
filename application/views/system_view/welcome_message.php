@@ -27,12 +27,12 @@
     <?php $this->load->view('system_view/layout/top_menu') ?>
     
     <!-- Tampilkan semua produk -->
-    <div class="row">
+    <div class="row" style="background-image: url('<?php echo base_url(); ?>assets2/img/w.jpg') ">
     <!-- looping products -->
       <?php foreach($daftar_buku as $product) : ?>
-      <div class="col-sm-3 col-md-3">
-      <div class="thumbnail">
-            <img src="<?=base_url()?>uploads/<?=$product->nama_file;?>" style="max-width: 100%; max-height:100%; height:100px">
+      <div class="col-sm-3 col-md-3" >
+      <div class="thumbnail" style="background-color: rgb(220 220 220); opacity: 0.8;" >
+            <img src="<?=base_url()?>uploads/<?=$product->nama_file;?>" style="max-width: 100%; max-height:100%; height:100px" >
         <div class="caption">
         <h3 style="min-height:60px;"><?=$product->judul_buku?></h3>
         <p><?=$product->kategori_buku?></p>
