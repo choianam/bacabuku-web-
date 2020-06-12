@@ -5,10 +5,6 @@ class Order extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		if(!$this->session->userdata('username'))
-		{
-			redirect('login');
-		}
 		$this->load->model('model_orders');
 	}
 	
@@ -26,6 +22,6 @@ class Order extends CI_Controller {
 
 	public function success()
 	{
-		$this->load->view('order_success');
+		$this->load->view('system_view/order_succes');
 	}
 }

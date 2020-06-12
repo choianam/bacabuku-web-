@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets2/img/logo.png'); ?>">
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <![endif]-->
@@ -37,7 +38,7 @@
 
             <nav class="brown">
                 <div class="container">
-                        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
                         <div class="nav-wrapper">
                             <a href="<?php echo base_url();?>Buku" class="brand-logo"><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 70px; width: 70px; border-radius: 50%;" alt=""></a>
                             <ul class="right hide-on-med-and-down">
@@ -51,12 +52,7 @@
           </div>
     <!-- mavbar-end -->
 
-    <!-- SideNav -->
-    <ul class="sidenav" id="mobile-nav">
-        <li><a href="<?php echo base_url();?>Buku/list_buku">Tentang</a></li>
-        <li><a href="<?php echo base_url();?>Buku/profile">Pendidikan</a></li>
-        <li><a class="btn orange" href="portofolio.php">MASUK</a></li>
-    </ul>
+    
     <!-- SideNav-end -->
     <!-- Slider -->
     <div id="index-banner" class="parallax-container">

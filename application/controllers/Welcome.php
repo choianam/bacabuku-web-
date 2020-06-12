@@ -48,17 +48,21 @@ class Welcome extends CI_Controller {
 		$this->load->view('system_view/show_cart', $data);
 	}
 	
-	public function delete()
-	{	
-		$id = $this->input->post('id');
-		$this->model_upldgbr->get_del($id);
-		redirect(base_url('welcome/cart'));
-	}
+	public function delete($id)
+	{
+
+		$where = array('id' => $id);
+		
+		$this->model_upldgbr->get_del($where,'order');
+		
+		redirect('welcome/cart');
+		
+		}
 
 	public function clear_cart()
 	{
 		$this->cart->destroy();
-		redirect(base_url());
+		redirect(base_url('welcome/cart'));
 	}
 }
 

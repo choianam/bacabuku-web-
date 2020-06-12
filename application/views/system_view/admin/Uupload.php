@@ -1,4 +1,15 @@
-
+<script>
+    
+    function update_confirm(){
+  var msg;
+  msg= "Anda yakin data sudah benar ?? " ;
+  var agree=confirm(msg);
+  if (agree)
+  return true ;
+  else
+  return false ;
+}
+</script>
 <head>
     <title>MaBook</title>
     
@@ -18,12 +29,13 @@
 <div class="container-fluid">
       <!-- Main component for a primary marketing message or call to action -->
 <div class="panel panel-default">
-  <div class="panel-heading"><b>Form Upload Image</b></div>
+  <div class="panel-heading"><b>Form Upload</b></div>
   <form action="<?=base_url()?>index.php/upload/updatedata" method="post" enctype="multipart/form-data">
   <div class="panel-body">
   <?=$this->session->flashdata('pesan')?>
        <table class="table table-striped">
-       <tr>
+       
+         <tr>
           <td style="width:15%;">File Foto</td>
           <td>
             <div class="col-sm-10">
@@ -31,6 +43,19 @@
 
           <!-- file lama -->
           <input type="hidden" name="filelama" value="<?=$data->nama_file?>" required>
+            <!-- ID -->
+          <input type="hidden" name="id" value="<?=$data->id?>" required>
+            </div>
+            </td>
+         </tr>
+         <tr>
+          <td style="width:15%;">File Dokumen</td>
+          <td>
+            <div class="col-sm-10">
+            <input type="file" name="filedokumen"><br><br>
+
+          <!-- file lama -->
+          <input type="hidden" name="filelama" value="<?=$data->dokumen?>" required>
             <!-- ID -->
           <input type="hidden" name="id" value="<?=$data->id?>" required>
             </div>
@@ -78,8 +103,7 @@
          </tr>
          <tr>
           <td colspan="2">
-          
-            <input type="submit" class="btn btn-success" value="Simpan">
+            <input type="submit" onclick="return update_confirm()" class="btn btn-success" value="Simpan">
             <button type="reset" class="btn btn-default">Batal</button>
           </td>
          </tr>
