@@ -40,9 +40,20 @@
     <!-- navbar -->
     <div class="navbar-fixed">
 
+
             <nav class="brown">
+            	<a href="<?php echo base_url();?>Buku"   class="brand-logo" ><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 60px; width: 60px; border-radius: 90%;" alt="" ></a>
                 <div class="container">
                   <div class="dropdown">
+                  	<div class="nav-wrapper">
+                             
+                            <ul class="right hide-on-med-and-down">
+
+                                
+                                <li><a href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>
+                                <li><a class="btn brown" href="<?php echo base_url();?>/auth">MASUK</a></li>
+                            </ul>
+                        </div>
                       <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"> Main Menu <span class="caret"></span></button>
                       <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>
@@ -50,14 +61,7 @@
                       </ul>
                     </div>
                   </div>
-                        <div class="nav-wrapper">
-                            <a href="<?php echo base_url();?>Buku" class="brand-logo"><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 70px; width: 70px; border-radius: 50%;" alt=""></a>
-                            <ul class="right hide-on-med-and-down">
-                                
-                                <li><a href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>
-                                <li><a class="btn brown" href="<?php echo base_url();?>/auth">MASUK</a></li>
-                            </ul>
-                        </div>
+                         
                 </div>
             </nav>
           </div>
