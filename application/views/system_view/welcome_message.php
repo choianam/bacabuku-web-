@@ -14,7 +14,7 @@
             $("#myModal2").modal("hide");
         })
       })
-      function tambah_confirm()
+  function tambah_confirm()
   {
     var msg;
     msg= "Anda yakin, buku ini masuk library anda ?? " ;
@@ -43,17 +43,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">PERPUSTAKAAN ONLINE</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <p> SELAMAT DATANG "<?php echo $this->session->userdata('Username') ?>", ANDA BERHASIL LOGIN SEBAGAI SISWA<b></p>
-      </div>
-      <div class="modal-footer">
-        
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -67,15 +62,14 @@
       <div class="col-sm-3 col-md-3" >
       <div class="thumbnail" style="background-color: rgb(220 220 220); opacity: 0.8;" >
             <img src="<?=base_url()?>uploads/<?=$product->nama_file;?>" style="max-width: 100%; max-height:100%; height:100px" >
-        <div class="caption">
-        <div class="w3-display-topleft w3-black w3-padding">Ayo Baca </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
+        <div class="caption" >
+        
+        <div class="w3-col l3 m6 w4-margin-bottom"  >
+        <div class="w3-display-container" >
         </div>
         </div>
         <center>
-        <h3 style="min-height:60px;"><?=$product->judul_buku?></h3>
-        <p><?=$product->kategori_buku?></p>
+        <h3 style="min-height:90px;"><?=$product->judul_buku?></h3>
         <p><?=$product->pengarang_buku?></p>
         <p><?=$product->penerbit_buku?></p>
         <p>

@@ -64,7 +64,8 @@
             <thead>
               <tr>
                 
-                <th scope="col">id</th>
+                <th scope="col">Nomor</th>
+                <th scope="col">Level</th>
                 <th scope="col">kategori</th>
                 <th scope="col" width="200px">Action</th>
               </tr>
@@ -73,6 +74,7 @@
               <?php foreach ($ktg as $ktg) :?>
                 <tr>
                 <td><?= $ktg['id'];?></td>
+                <td><?= $ktg['id_kategori'];?></td>
                   <td><?= $ktg['kategori'];?></td>
                   <td>
                     <a href="<?= base_url(); ?>kategori/edit/<?= $ktg['id']; ?>" class="badge badge-primary badge-pill tampilModalUbah">Edit</a>
