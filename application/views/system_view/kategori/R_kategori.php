@@ -58,7 +58,6 @@
 
     <div class="row">
         <div class="col-md-12">
-          <a href="<?= base_url(); ?>kategori/tambah" class="btn btn-primary"> Tambah Kategori</a>
           <h1 style="font-size: 20px">Data Kategori</h1>
           <table class="table table-stripped">
             <thead>

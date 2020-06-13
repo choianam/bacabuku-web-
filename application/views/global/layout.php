@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets2/img/logo.png'); ?>">
     <!--[if IE]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -36,17 +40,28 @@
     <!-- navbar -->
     <div class="navbar-fixed">
 
+
             <nav class="brown">
+            	<a href="<?php echo base_url();?>Buku"   class="brand-logo" ><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 60px; width: 60px; border-radius: 90%;" alt="" ></a>
                 <div class="container">
-                        <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">Menu</i></a>
-                        <div class="nav-wrapper">
-                            <a href="<?php echo base_url();?>Buku" class="brand-logo"><img src="<?php echo base_url(); ?>assets2/img/ll.png" style="height: 70px; width: 70px; border-radius: 50%;" alt=""></a>
+                  <div class="dropdown">
+                  	<div class="nav-wrapper">
+                             
                             <ul class="right hide-on-med-and-down">
+
                                 
                                 <li><a href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>
                                 <li><a class="btn brown" href="<?php echo base_url();?>/auth">MASUK</a></li>
                             </ul>
                         </div>
+                      <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"> Main Menu <span class="caret"></span></button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url();?>Buku/profile">Tentang Perputakaan</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="<?php echo base_url();?>/auth">MASUK</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                         
                 </div>
             </nav>
           </div>

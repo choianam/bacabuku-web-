@@ -71,21 +71,19 @@
          </tr>
          <tr>
           <td style="width:15%;">Kategori</td>
-          <div class="form-group">
+          <td>
+            <div class="col-sm-10">
             <select name="kategori_buku" class="form-control">
               <option value="">- Pilih -</option>
               <option value="1" <?='kategori_buku' == 1 ? "selected" : null?>>IPA</option>
               <option value="2" <?='kategori_buku'== 2 ? "selected" : null?>>IPS</option>
               <option value="3" <?='kategori_buku' == 3 ? "selected" : null?>>BAHASA INDONESIA</option>
               <option value="4" <?='kategori_buku'== 4 ? "selected" : null?>>LAINNYA</option>
-              <option value="5" <?='kategori_buku'== 5 ? "selected" : null?>>NOVEL ROMANSE</option>
-              <option value="6" <?='kategori_buku' == 6 ? "selected" : null?>>NOVEL KOMEDI</option>
-              <option value="7" <?='kategori_buku'== 7 ? "selected" : null?>>NOVEL ROMANSA</option>
-              <option value="8" <?='kategori_buku' == 9 ? "selected" : null?>>BUKU UJIAN</option>
-              <option value="9" <?='kategori_buku'== 10 ? "selected" : null?>>NOVEL HOROR</option>
-        </select>
-        </div>
-         </tr>
+              <option value="5" <?='kategori_buku'== 5 ? "selected" : null?>>BUKU UJIAN</option>
+            </select>
+          </div>
+        </td>
+      </tr>
          <tr>
           <td style="width:15%;">Pengarang</td>
           <td>
