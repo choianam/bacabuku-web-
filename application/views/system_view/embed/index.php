@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets2/img/logo.png'); ?>">
 	<meta charset="utf-8">
 	<title> FORM BACA</title>
 	<meta charset="utf-8" />
