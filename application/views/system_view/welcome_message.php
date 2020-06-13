@@ -62,14 +62,14 @@
       <div class="col-sm-3 col-md-3" >
       <div class="thumbnail" style="background-color: rgb(220 220 220); opacity: 0.8;" >
             <img src="<?=base_url()?>uploads/<?=$product->nama_file;?>" style="max-width: 100%; max-height:100%; height:100px" >
-        <div class="caption">
-        <div class="w3-display-topleft w3-black w3-padding">Ayo Baca </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
+        <div class="caption" >
+        
+        <div class="w3-col l3 m6 w4-margin-bottom"  >
+        <div class="w3-display-container" >
         </div>
         </div>
         <center>
-        <h3 style="min-height:60px;"><?=$product->judul_buku?></h3>
+        <h3 style="min-height:90px;"><?=$product->judul_buku?></h3>
         <p><?=$product->pengarang_buku?></p>
         <p><?=$product->penerbit_buku?></p>
         <p>

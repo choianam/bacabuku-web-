@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets2/img/logo.png'); ?>">
 	<meta charset="utf-8">
 	<title> FORM BACA</title>
 	<meta charset="utf-8" />
@@ -48,7 +49,7 @@
 <!-- navbar-end -->
 <!-- Untuk mengupload pdf di layar form baca pada halaman user -->
 	<div class="container">
-		<embed src="<?=base_url()?>/uploads/Publikasi.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="667px" /> 
+		<embed src="<?=base_url()?>/uploads/sjr.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="667px" /> 
 	</div>
 <!-- End upload pdf -->
 <!-- Script untuk menampilkan bootstrap atau assets yang ada di halaman user -->
