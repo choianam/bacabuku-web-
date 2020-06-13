@@ -58,9 +58,9 @@
                                     <table class="table table-bordered table-striped">
                                                 <tr>
                                                 <th>No</th>
-                                                <th>Nama File</th>
+      
                                                 <th>Gambar File</th>
-                                                <th>Nama Dokumen</th>
+ 
                                                 <th>Judul Buku</th>
                                                 <th>Kategori</th>
                                                 <th>Pengarang Buku</th>
@@ -72,9 +72,9 @@
                                             foreach($query as $key => $data) { ?>
                                             <tr>
                                                 <td><?=$no++?></td>
-                                                <td><?=$data->nama_file?></td>
+                                              
                                                 <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
-                                                <td><?=$data->dokumen?></td>
+   
                                                 <td><?=$data->judul_buku?></td>
                                                 <td><?=$data->kategori_buku?></td>
                                                 <td><?=$data->pengarang_buku?></td>

@@ -48,7 +48,7 @@
 <!-- navbar-end -->
 <!-- Untuk mengupload pdf di layar form baca pada halaman user -->
 	<div class="container">
-		<embed src="<?=base_url()?>/uploads/Publikasi.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="667px" /> 
+		<embed src="<?=base_url()?>/uploads/sjr.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="667px" /> 
 	</div>
 <!-- End upload pdf -->
 <!-- Script untuk menampilkan bootstrap atau assets yang ada di halaman user -->
