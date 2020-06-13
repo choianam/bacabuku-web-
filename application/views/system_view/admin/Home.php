@@ -73,7 +73,7 @@
                                             <tr>
                                                 <td><?=$no++?></td>
                                               
-                                                <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="50px" height="50px"></td>
+                                                <td><img src="<?=base_url()?>uploads/<?=$data->nama_file;?>" width="80px" height="100px"></td>
    
                                                 <td><?=$data->judul_buku?></td>
                                                 <td><?=$data->kategori_buku?></td>
