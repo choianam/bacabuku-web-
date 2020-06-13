@@ -16,12 +16,12 @@ class Upload extends CI_Controller {
     {        
         $data['query'] = $this->model_upldgbr->get_allimage(); //query dari model
         
-        $this->load->view('system_view/admin/home',$data); //tampilan awal ketika controller upload di akses
+        $this->load->view('system_view/admin/Home',$data); //tampilan awal ketika controller upload di akses
     }
 
     public function add() {
         //view yang tampil jika fungsi add diakses pada url
-        $this->load->view('system_view/admin/fupload');
+        $this->load->view('system_view/admin/Fupload');
     }
     
     public function insert(){
@@ -71,7 +71,7 @@ public function edit($id)
     $kondisi = array('id' => $id );
 
     $data['data'] = $this->model_upldgbr->get_by_id($kondisi);
-    return $this->load->view('system_view/admin/uupload',$data);
+    return $this->load->view('system_view/admin/Uupload',$data);
 }
 
 // update
