@@ -7,31 +7,33 @@ class Auth extends CI_Controller
     parent::__construct();
     $this->load->model('Model_users');
     $this->load->library('session');
+    $this->load->model('LoginApi');
+    $this->load->helper('text');
   }
   public function index(){
     $this->load->view('system_view/login/login');
   }
   function ceklogin(){
-    if(isset($_POST['login'])){
-      $Username = $this->input->post('Username',true);
-      $Password = $this->input->post('Password',true);
-      $cek = $this->Model_users->proseslogin($Username, $Password);
-      $hasil = count($cek);
-      if($hasil > 0){
-        $yglogin = $this->db->get_where('daftar_user',array('Username'=>$Username, 'Password' => $Password))->row();
-        $data = array('udhmasuk' => true,
-            'Username' => $yglogin->Username);
-        $this->session->set_userdata($data);
-        if($yglogin->id_akses == '1'){
+    
+      $Username = $this->input->post('Username');
+      $Password = $this->input->post('Password');
+      $q = $this->db->query("SELECT * FROM daftar_user WHERE Username='$Username' AND Password='$Password'");
+      if ($q->num_rows() > 0) {
+        $d = $this->db->get_where('daftar_user',array('Username'=>$Username, 'Password' => $Password))->row();
+        $nama = $q->row()->Username;
+        $this->session->set_userdata('Username',$nama);
+        if($d->id_akses == '1'){
           redirect('dash');
-        }elseif($yglogin->id_akses == '2'){
+        }elseif($d->id_akses == '2'){
           redirect('welcome');
         }
       }else{
-        redirect('auth');
+         //pesan yang muncul jika terdapat error dimasukkan pada session flashdata
+         $data['error']='!! Wrong Username or Password !!';
+        redirect('auth', $data);
       }
     }
-  }
+ 
   function dash(){
     $data["title"] = "Halaman Dash";
     $this->load->view('dash', $data);
@@ -40,11 +42,20 @@ class Auth extends CI_Controller
     $data["title"] = "Halaman Moderator";
     $this->load->view('buku', $data);
   }
-  public function logout()
+  function logout()
   {
-    $this->session->sess_destroy();
-    redirect('auth');
+    $this->session->sess_destroy(); 
+    $data['logout'] = 'You have been logged out.';
+    $this->load->view('system_view/login/login', $data);
   }
+  public function Api()
+  {
+      $Username = $this->input->get('Username');
+      $Password = $this->input->get('Password');
+      $data = $this->LoginApi->loginApi($Username, $Password);
+      echo json_encode($data->result_array());
+  }
+  
 
 }
 ?>

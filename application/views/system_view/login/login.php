@@ -71,7 +71,7 @@ label{
             <center>
                 <img  src="<?php echo base_url(); ?>/assets2/img/logo.png" class="profile-img" alt="logo images" style="height: 90px; width: 90px; border-radius: 50%;	">    
             </center>
-                <?php echo form_open('auth/ceklogin')?>
+            <form action="<?php echo base_url('auth/ceklogin');?>" method="POST">
                 <div><?=validation_errors()?></div>
                 <div><?=$this->session->flashdata('error')?></div>
                     <div class="row">
@@ -95,6 +95,8 @@ label{
                 <button class="btn btn-lg btn-primary btn-block" name="login" id="btn-login" type="submit">
                     Masuk</button>
                 </form>
+                <?php if(isset($error)) echo "<b><span style='color:red;'>$error</span></b>";
+                if(isset($logout)) echo "<b><span style='color:red;'>$logout</span></b>"; ?>
             </div>
             <div id="error" style="margin-top: 10px"></div>
         </div>
